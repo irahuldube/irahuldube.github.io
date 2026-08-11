@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rahul Dubey — Backend Developer</title>
+<meta name="description" content="Rahul Dubey — Backend Developer specializing in Node.js, NestJS, ExpressJS, MongoDB & MySQL. 5+ years building scalable RESTful APIs.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚙️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Boot / scanline overlay -->
+<div class="boot-overlay" id="bootOverlay" aria-hidden="true">
+  <div class="boot-text">
+    <span class="boot-line">$ initializing session...</span>
+    <span class="boot-line">$ loading data.json</span>
+    <span class="boot-line">$ mounting components... <span class="boot-ok">OK</span></span>
+  </div>
+</div>
+
+<div class="app" id="app">
+
+  <!-- ============ SIDEBAR (file explorer) ============ -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-dot"></span>
+      <span class="brand-text">rahul<span class="accent">.dev</span></span>
+    </div>
+
+    <nav class="explorer" aria-label="Section navigation">
+      <p class="explorer-label">EXPLORER</p>
+      <ul class="file-tree">
+        <li><a href="#hero" class="file-item active" data-target="hero"><span class="file-icon">▸</span>index.html</a></li>
+        <li><a href="#about" class="file-item" data-target="about"><span class="file-icon">▸</span>about.md</a></li>
+        <li><a href="#skills" class="file-item" data-target="skills"><span class="file-icon">▸</span>stack.json</a></li>
+        <li><a href="#experience" class="file-item" data-target="experience"><span class="file-icon">▸</span>experience.log</a></li>
+        <li><a href="#projects" class="file-item" data-target="projects"><span class="file-icon">▸</span>projects/</a></li>
+        <li><a href="#education" class="file-item" data-target="education"><span class="file-icon">▸</span>education.yml</a></li>
+        <li><a href="#contact" class="file-item" data-target="contact"><span class="file-icon">▸</span>contact.sh</a></li>
+      </ul>
+    </nav>
+
+    <div class="sidebar-footer">
+      <span class="status-dot" id="statusDot"></span>
+      <span id="statusText">available for backend roles</span>
+    </div>
+  </aside>
+
+  <!-- ============ MOBILE TOPBAR ============ -->
+  <header class="topbar">
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <span class="topbar-title">rahul<span class="accent">.dev</span></span>
+    <a class="topbar-cta" href="#contact">Contact</a>
+  </header>
+
+  <!-- ============ MAIN EDITOR PANE ============ -->
+  <main class="editor" id="editor">
+
+    <!-- Tab bar -->
+    <div class="tabbar" id="tabbar">
+      <button class="tab active" data-target="hero">index.html</button>
+      <button class="tab" data-target="about">about.md</button>
+      <button class="tab" data-target="skills">stack.json</button>
+      <button class="tab" data-target="experience">experience.log</button>
+      <button class="tab" data-target="projects">projects/</button>
+      <button class="tab" data-target="contact">contact.sh</button>
+    </div>
+
+    <div class="editor-body">
+
+      <!-- ===================== HERO ===================== -->
+      <section id="hero" class="section hero-section">
+        <div class="gutter" aria-hidden="true"></div>
+        <div class="section-content">
+
+          <div class="terminal-window">
+            <div class="terminal-titlebar">
+              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+              <span class="terminal-name">bash — rahul@backend:~</span>
+            </div>
+            <div class="terminal-body" id="terminalBody"></div>
+          </div>
+
+          <div class="hero-meta">
+            <h1 id="heroName" class="hero-name"></h1>
+            <p id="heroTitle" class="hero-title"></p>
+            <div class="hero-tags" id="heroStack"></div>
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary">view_projects()</a>
+              <a href="#contact" class="btn btn-ghost">get_in_touch()</a>
+            </div>
+            <div class="hero-meta-row">
+              <span id="heroLocation"></span>
+              <span class="sep">/</span>
+              <span id="heroExperience"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== ABOUT ===================== -->
+      <section id="about" class="section">
+        <div class="gutter" data-lines="10"></div>
+        <div class="section-content">
+          <p class="section-eyebrow">// about.md</p>
+          <h2 class="section-title">Professional Summary</h2>
+          <p class="prose" id="summaryText"></p>
+        </div>
+      </section>
+
+      <!-- ===================== SKILLS ===================== -->
+      <section id="skills" class="section">
+        <div class="gutter" data-lines="30"></div>
+        <div class="section-content">
+          <p class="section-eyebrow">// stack.json</p>
+          <h2 class="section-title">Technical Stack</h2>
+          <div class="config-block" id="skillsBlock"></div>
+        </div>
+      </section>
+
+      <!-- ===================== EXPERIENCE ===================== -->
+      <section id="experience" class="section">
+        <div class="gutter" data-lines="40"></div>
+        <div class="section-content">
+          <p class="section-eyebrow">// experience.log</p>
+          <h2 class="section-title">Work Experience</h2>
+          <div class="timeline" id="experienceList"></div>
+        </div>
+      </section>
+
+      <!-- ===================== PROJECTS ===================== -->
+      <section id="projects" class="section">
+        <div class="gutter" data-lines="45"></div>
+        <div class="section-content">
+          <p class="section-eyebrow">// projects/</p>
+          <h2 class="section-title">Key Projects</h2>
+          <div class="project-grid" id="projectGrid"></div>
+        </div>
+      </section>
+
+      <!-- ===================== EDUCATION + CERTS ===================== -->
+      <section id="education" class="section">
+        <div class="gutter" data-lines="20"></div>
+        <div class="section-content">
+          <p class="section-eyebrow">// education.yml</p>
+          <h2 class="section-title">Education &amp; Certifications</h2>
+          <div class="edu-cert-grid">
+            <div class="edu-block" id="eduBlock"></div>
+            <div class="cert-block">
+              <p class="cert-heading">$ ls ./certifications</p>
+              <ul class="cert-list" id="certList"></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== CONTACT ===================== -->
+      <section id="contact" class="section contact-section">
+        <div class="gutter" data-lines="15"></div>
+        <div class="section-content">
+          <p class="section-eyebrow">// contact.sh</p>
+          <h2 class="section-title">Let's Build Something</h2>
+          <p class="prose">Open to backend / full-stack roles where scale, clean architecture and API design actually matter.</p>
+          <div class="contact-grid" id="contactGrid"></div>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <p>&copy; <span id="year"></span> <span id="footerName"></span>. Built with HTML, CSS &amp; vanilla JS — data-driven from <code>data.json</code>.</p>
+      </footer>
+
+    </div>
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

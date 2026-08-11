@@ -1,0 +1,175 @@
+{
+  "meta": {
+    "siteTitle": "Rahul Dubey — Backend Developer",
+    "favicon": "⚙️"
+  },
+  "profile": {
+    "name": "Rahul Dubey",
+    "title": "Backend Developer",
+    "stack": ["Node.js", "NestJS", "ExpressJS", "MongoDB", "MySQL"],
+    "experience": "5+ Years",
+    "location": "Ajmer, Rajasthan, India",
+    "phone": "+91 7014615922",
+    "email": "dubeyrahul890@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/rahuldubeme",
+    "github": "https://github.com/rahuldubeyme",
+    "availability": "online",
+    "terminalLines": [
+      "$ whoami",
+      "rahul_dubey — backend_developer",
+      "$ cat status.txt",
+      "5+ yrs building REST APIs @ scale | Node.js · NestJS · ExpressJS",
+      "$ ./run --mode=production"
+    ]
+  },
+  "summary": "Backend Developer with 4.8 years of experience (Konstant Infosolutions) building scalable RESTful APIs and full-stack web applications using Node.js, NestJS, and ExpressJS. Hands-on expertise across the full project lifecycle — from architecture and API design to deployment on Linux servers with Nginx. Delivered 10+ production projects across ride-hailing, e-commerce, on-demand services, healthcare, and SaaS domains. Experienced with payment gateway integrations (Stripe, UPI), NoSQL/SQL databases, and TypeORM/Sequelize ORMs.",
+  "skills": [
+    {
+      "category": "languages",
+      "items": ["JavaScript (ES2022+)", "TypeScript"]
+    },
+    {
+      "category": "backend",
+      "items": ["Node.js", "NestJS", "ExpressJS", "REST APIs", "3rd-Party API Integration", "Chat Socket"]
+    },
+    {
+      "category": "databases",
+      "items": ["MongoDB", "MySQL", "PostgreSQL", "Redis"]
+    },
+    {
+      "category": "orm_odm",
+      "items": ["TypeORM", "Sequelize", "Mongoose"]
+    },
+    {
+      "category": "payments",
+      "items": ["Stripe", "UPI", "Payment Gateway Integration"]
+    },
+    {
+      "category": "frontend",
+      "items": ["HTML", "CSS", "Bootstrap", "jQuery", "Ajax", "Axios"]
+    },
+    {
+      "category": "devops",
+      "items": ["Nginx", "Linux", "Git", "GitHub", "Server Deployment"]
+    },
+    {
+      "category": "familiar_with",
+      "items": ["RAG", "Docker", "React", "Angular"]
+    }
+  ],
+  "experience": [
+    {
+      "role": "Backend Developer (Node.js)",
+      "company": "Konstant Infosolutions Pvt. Ltd.",
+      "location": "Jaipur, Rajasthan · IT Services & Product Development",
+      "duration": "Jan 2022 — Present",
+      "current": true,
+      "points": [
+        "Design and develop scalable RESTful APIs using Node.js and ExpressJS, enabling seamless communication between frontend and backend across 10+ client projects.",
+        "Integrate diverse third-party APIs (maps, SMS, notifications, social auth) into production applications, reducing client integration time by standardizing reusable modules.",
+        "Implement secure payment processing workflows using Stripe and UPI, handling end-to-end transaction lifecycles including webhooks, refunds, and subscription billing.",
+        "Work across full-stack environments (Node.js, MySQL, MongoDB, HTML/CSS/Bootstrap/jQuery) on both Windows and Linux servers, deploying applications behind Nginx.",
+        "Manage database design and optimization across MongoDB and MySQL, applying TypeORM and Sequelize for clean data access layers.",
+        "Deliver SaaS, on-demand service, e-commerce, healthcare, and ride-sharing platforms — collaborating directly with clients to translate requirements into production-ready features."
+      ]
+    },
+    {
+      "role": "Junior Developer (Front-End)",
+      "company": "SeekAce Solutions",
+      "location": "Jaipur, Rajasthan · Software Development",
+      "duration": "Jun 2021 — Jan 2022",
+      "current": false,
+      "points": [
+        "Contributed to admin panel development — built CRUD functionality for user registration module using PHP.",
+        "Implemented data export feature (Excel) for admin reporting, reducing manual data extraction effort for the operations team.",
+        "Maintained continuous learning mindset to keep pace with evolving frontend and backend technologies."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "On-Demand Service Platform",
+      "ext": "api",
+      "stack": ["Node.js", "ExpressJS", "MongoDB", "Stripe"],
+      "points": [
+        "Architected multi-service on-demand platform supporting bathing, car washing, childcare, gardening and 10+ service categories.",
+        "Built dual-interface system for customers and service providers with real-time booking, scheduling, and communication.",
+        "Integrated Stripe payment gateway with subscription and wallet functionality for premium users."
+      ]
+    },
+    {
+      "name": "E-Commerce Platform",
+      "ext": "api",
+      "stack": ["Node.js", "ExpressJS", "MongoDB", "Ajax", "Axios", "UPI"],
+      "points": [
+        "Developed subscription-based e-commerce platform with points rewards system, wallet, and UPI/Stripe payment integration.",
+        "Built backend agriculture buy/sell marketplace with product listing and transaction flows.",
+        "Delivered separate feature sets for business users and premium users with role-based access control."
+      ]
+    },
+    {
+      "name": "Tour & Travel Service",
+      "ext": "api",
+      "stack": ["Node.js", "ExpressJS", "MongoDB", "Stripe"],
+      "points": [
+        "Built comprehensive travel booking app with personalized tour recommendations based on location and budget.",
+        "Developed guide and transportation selection features with dual-platform support for guides and travelers.",
+        "Integrated Stripe for secure payment processing across all booking flows."
+      ]
+    },
+    {
+      "name": "Doctor / Patient Appointment App",
+      "ext": "api",
+      "stack": ["Node.js", "ExpressJS", "MongoDB"],
+      "points": [
+        "Developed appointment management system connecting therapists and patients for health checkup scheduling.",
+        "Built social media module for healthcare professionals to post medical content (cancer, chronic illness awareness)."
+      ]
+    },
+    {
+      "name": "Employee Wellbeing SaaS",
+      "ext": "saas",
+      "stack": ["Node.js", "NestJS", "MongoDB", "TypeORM"],
+      "points": [
+        "Contributed to SaaS-based employee wellbeing platform with multi-tenant architecture.",
+        "Built REST APIs for employee engagement features and integrated third-party wellness service providers."
+      ]
+    },
+    {
+      "name": "Freelance Job Platform",
+      "ext": "api",
+      "stack": ["Node.js", "ExpressJS", "MongoDB"],
+      "points": [
+        "Built Fiverr-style bidding platform where job seekers can discover and bid on client projects.",
+        "Implemented project posting, bid management, and communication workflows between clients and freelancers."
+      ]
+    },
+    {
+      "name": "QR-Based Activity Tracker (Samsung)",
+      "ext": "iot",
+      "stack": ["Node.js", "ExpressJS", "SQL", "SQLite"],
+      "points": [
+        "Developed a QR-based customer engagement platform for Samsung retail stores across India.",
+        "Enabled users to scan QR codes to access AI smartphone features, videos, and product information.",
+        "Built APIs to track user interactions and send real-time analytics to the Samsung backend for store-wise visitor insights and engagement reporting."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "B.Tech — Computer Science & Engineering",
+      "institute": "St. Wilfred Institute of Engineering & Technology",
+      "duration": "2016 — 2020",
+      "detail": "Aggregate: 64%"
+    }
+  ],
+  "certifications": [
+    "AWS Community Day Participation Certificate",
+    "White Hat Hacker & Penetration Tester — Eduonix",
+    "Web Developer Course Completion Certificate",
+    "Claude With The Anthropic Api Completion Certificate",
+    "Claude Code In Active Completion Certificate",
+    "SEMrush SEO Toolkit Exam — SEMrush Academy",
+    "Claude 101 Completion Certificate"
+  ]
+}
