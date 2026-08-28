@@ -12,7 +12,8 @@
     "phone": "+91 7014615922",
     "email": "dubeyrahul890@gmail.com",
     "linkedin": "https://www.linkedin.com/in/rahuldubeme",
-    "github": "https://github.com/rahuldubeyme",
+    "github": "https://github.com/irahuldube",
+    "resumeUrl": "./data/Backend-5EXP-Resume.Rahul_Dubey.pdf",
     "availability": "online",
     "terminalLines": [
       "$ whoami",
@@ -54,13 +55,14 @@
     },
     {
       "category": "familiar_with",
-      "items": ["RAG", "Docker", "React", "Angular"]
+      "items": ["RAG", "React"]
     }
   ],
   "experience": [
     {
       "role": "Backend Developer (Node.js)",
       "company": "Konstant Infosolutions Pvt. Ltd.",
+      "url": "https://www.konstantinfo.com",
       "location": "Jaipur, Rajasthan · IT Services & Product Development",
       "duration": "Jan 2022 — Present",
       "current": true,
@@ -76,6 +78,7 @@
     {
       "role": "Junior Developer (Front-End)",
       "company": "SeekAce Solutions",
+      "url": "https://www.seekace.com",
       "location": "Jaipur, Rajasthan · Software Development",
       "duration": "Jun 2021 — Jan 2022",
       "current": false,
@@ -89,6 +92,11 @@
   "projects": [
     {
       "name": "On-Demand Service Platform",
+      "description": "Multi-service on-demand platform supporting 10+ home service categories with real-time booking, scheduling, and Stripe payments.",
+      "url": "https://knockknockpros.com",
+      "playstore": "",
+      "appstore": "",
+      "image": "",
       "ext": "api",
       "stack": ["Node.js", "ExpressJS", "MongoDB", "Stripe"],
       "points": [
@@ -99,6 +107,11 @@
     },
     {
       "name": "E-Commerce Platform",
+      "description": "Subscription-based e-commerce platform with rewards points, wallet system, and UPI/Stripe payment integration for B2C and B2B users.",
+      "url": "https://www.maison-regalia.com",
+      "playstore": "",
+      "appstore": "",
+      "image": "",
       "ext": "api",
       "stack": ["Node.js", "ExpressJS", "MongoDB", "Ajax", "Axios", "UPI"],
       "points": [
@@ -109,6 +122,11 @@
     },
     {
       "name": "Tour & Travel Service",
+      "description": "Comprehensive travel booking app with personalized tour recommendations, guide selection, and secure Stripe payments for travelers.",
+      "url": "https://yogous.com",
+      "playstore": "",
+      "appstore": "",
+      "image": "",
       "ext": "api",
       "stack": ["Node.js", "ExpressJS", "MongoDB", "Stripe"],
       "points": [
@@ -119,6 +137,11 @@
     },
     {
       "name": "Doctor / Patient Appointment App",
+      "description": "Appointment management system connecting therapists and patients for health checkup scheduling with a social media module for healthcare professionals.",
+      "url": "https://www.attain-pt.com",
+      "playstore": "",
+      "appstore": "",
+      "image": "",
       "ext": "api",
       "stack": ["Node.js", "ExpressJS", "MongoDB"],
       "points": [
@@ -128,6 +151,11 @@
     },
     {
       "name": "Employee Wellbeing SaaS",
+      "description": "SaaS-based employee wellbeing platform with multi-tenant architecture, engagement features, and third-party wellness service integrations.",
+      "url": "",
+      "playstore": "",
+      "appstore": "",
+      "image": "",
       "ext": "saas",
       "stack": ["Node.js", "NestJS", "MongoDB", "TypeORM"],
       "points": [
@@ -137,6 +165,11 @@
     },
     {
       "name": "Freelance Job Platform",
+      "description": "Fiverr-style bidding marketplace where job seekers discover and bid on client projects with full project posting and communication workflows.",
+      "url": "https://www.matchcreatorz.com",
+      "playstore": "",
+      "appstore": "",
+      "image": "",
       "ext": "api",
       "stack": ["Node.js", "ExpressJS", "MongoDB"],
       "points": [
@@ -146,6 +179,11 @@
     },
     {
       "name": "QR-Based Activity Tracker (Samsung)",
+      "description": "QR-based customer engagement platform for Samsung retail stores across India, tracking user interactions and sending real-time analytics.",
+      "url": "https://aiusecase.galaxyaiagent.com",
+      "playstore": "",
+      "appstore": "",
+      "image": "",
       "ext": "iot",
       "stack": ["Node.js", "ExpressJS", "SQL", "SQLite"],
       "points": [
@@ -159,17 +197,20 @@
     {
       "degree": "B.Tech — Computer Science & Engineering",
       "institute": "St. Wilfred Institute of Engineering & Technology",
+      "url": "https://stwilfreds.in",
       "duration": "2016 — 2020",
       "detail": "Aggregate: 64%"
     }
   ],
   "certifications": [
-    "AWS Community Day Participation Certificate",
-    "White Hat Hacker & Penetration Tester — Eduonix",
-    "Web Developer Course Completion Certificate",
-    "Claude With The Anthropic Api Completion Certificate",
-    "Claude Code In Active Completion Certificate",
-    "SEMrush SEO Toolkit Exam — SEMrush Academy",
-    "Claude 101 Completion Certificate"
+    { "name": "AI Agent from Scratch Certificate", "url": "https://www.wscubetech.com/verify-certificate/22NULWS2026M6056050749" },
+    { "name": "AI Engineering Roadmap 2026 Certificate", "url": "https://www.wscubetech.com/verify-certificate/UBVLQWS2026M5997877222" },
+    { "name": "AWS Community Day Participation Certificate", "url": "https://cert-files.konfhub.com/10002/aed1b2e0-1480-11f1-898d-9331ee8ac913.pdf" },
+    { "name": "White Hat Hacker & Penetration Tester — Eduonix", "url": "/" },
+    { "name": "Web Developer Course Completion Certificate", "url": "/" },
+    { "name": "Claude With The Anthropic Api Completion Certificate", "url": "https://verify.skilljar.com/c/cxatvqrmsnq9" },
+    { "name": "Claude Code In Active Completion Certificate", "url": "https://verify.skilljar.com/c/gdiemryw28xg" },
+    { "name": "SEMrush SEO Toolkit Exam — SEMrush Academy", "url": "/" },
+    { "name": "Claude 101 Completion Certificate", "url": "https://verify.skilljar.com/c/cnr2svvt437n" }
   ]
 }
