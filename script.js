@@ -44,8 +44,6 @@ function render(data) {
   renderEducation(data.education);
   renderCertifications(data.certifications);
   renderContact(data.profile);
-  document.getElementById('footerName').textContent = data.profile.name;
-  document.getElementById('year').textContent = new Date().getFullYear();
 }
 
 /* ---------------- HERO ---------------- */
@@ -206,8 +204,13 @@ function renderProjects(projects) {
     if (p.playstore) links.push(`<a class="pcard-link pcard-link-play"  href="${p.playstore}" target="_blank" rel="noopener">${PLAY_ICON} Play Store</a>`);
     if (p.appstore)  links.push(`<a class="pcard-link pcard-link-apple" href="${p.appstore}"  target="_blank" rel="noopener">${APPLE_ICON} App Store</a>`);
 
+    const cardUrl = p.url || p.playstore || p.appstore || '';
+    const cardClickAttr = cardUrl
+      ? `data-url="${cardUrl}" style="cursor:pointer;"`
+      : '';
+
     return `
-    <div class="pcard" role="group" aria-label="Project ${i+1} of ${projects.length}: ${escapeHtml(p.name)}">
+    <div class="pcard" role="group" aria-label="Project ${i+1} of ${projects.length}: ${escapeHtml(p.name)}" ${cardClickAttr}>
       ${imgHtml}
       <div class="pcard-body">
         <div class="pcard-head">
@@ -249,6 +252,17 @@ function renderProjects(projects) {
   prevBtn.addEventListener('click', () => goTo(current - 1));
   nextBtn.addEventListener('click', () => goTo(current + 1));
   dots.forEach(d => d.addEventListener('click', () => goTo(+d.dataset.index)));
+
+  // card click → open project URL
+  cards.forEach(card => {
+    const url = card.dataset.url;
+    if (!url) return;
+    card.addEventListener('click', (e) => {
+      // don't double-fire if user clicked a link inside the card
+      if (e.target.closest('a')) return;
+      window.open(url, '_blank', 'noopener,noreferrer');
+    });
+  });
 
   // sync dots on native scroll
   let scrollTimer;
