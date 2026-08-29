@@ -27,35 +27,53 @@
   "skills": [
     {
       "category": "languages",
+      "visible": true,
       "items": ["JavaScript (ES2022+)", "TypeScript"]
     },
     {
       "category": "backend",
+      "visible": true,
       "items": ["Node.js", "NestJS", "ExpressJS", "REST APIs", "3rd-Party API Integration", "Chat Socket"]
     },
     {
       "category": "databases",
+      "visible": true,
       "items": ["MongoDB", "MySQL", "PostgreSQL", "Redis"]
     },
     {
       "category": "orm_odm",
+      "visible": true,
       "items": ["TypeORM", "Sequelize", "Mongoose"]
     },
     {
       "category": "payments",
+      "visible": true,
       "items": ["Stripe", "UPI", "Payment Gateway Integration"]
     },
     {
       "category": "frontend",
+      "visible": true,
       "items": ["HTML", "CSS", "Bootstrap", "jQuery", "Ajax", "Axios"]
     },
     {
       "category": "devops",
+      "visible": true,
       "items": ["Nginx", "Linux", "Git", "GitHub", "Server Deployment"]
     },
     {
+      "category": "misc",
+      "visible": true,
+      "items": ["WebSockets", "JWT", "OAuth2", "REST", "JSON", "API Design"]
+    },
+    {
+      "category": "ai_ml",
+      "visible": false,
+      "items": ["Gemini API", "RAG (Retrieval-Augmented Generation)", "LangChain", "Vector Databases", "Embeddings", "Prompt Engineering"]
+    },
+    {
       "category": "familiar_with",
-      "items": ["RAG", "React"]
+      "visible": true,
+      "items": ["React"]
     }
   ],
   "experience": [
@@ -92,6 +110,7 @@
   "projects": [
     {
       "name": "On-Demand Service Platform",
+      "visible": true,
       "description": "Multi-service on-demand platform supporting 10+ home service categories with real-time booking, scheduling, and Stripe payments.",
       "url": "https://knockknockpros.com",
       "playstore": "",
@@ -107,6 +126,7 @@
     },
     {
       "name": "E-Commerce Platform",
+      "visible": true,
       "description": "Subscription-based e-commerce platform with rewards points, wallet system, and UPI/Stripe payment integration for B2C and B2B users.",
       "url": "https://www.maison-regalia.com",
       "playstore": "",
@@ -122,6 +142,7 @@
     },
     {
       "name": "Tour & Travel Service",
+      "visible": true,
       "description": "Comprehensive travel booking app with personalized tour recommendations, guide selection, and secure Stripe payments for travelers.",
       "url": "https://yogous.com",
       "playstore": "",
@@ -137,6 +158,7 @@
     },
     {
       "name": "Doctor / Patient Appointment App",
+      "visible": true,
       "description": "Appointment management system connecting therapists and patients for health checkup scheduling with a social media module for healthcare professionals.",
       "url": "https://www.attain-pt.com",
       "playstore": "",
@@ -151,6 +173,7 @@
     },
     {
       "name": "Employee Wellbeing SaaS",
+      "visible": true,
       "description": "SaaS-based employee wellbeing platform with multi-tenant architecture, engagement features, and third-party wellness service integrations.",
       "url": "",
       "playstore": "",
@@ -165,6 +188,7 @@
     },
     {
       "name": "Freelance Job Platform",
+      "visible": true,
       "description": "Fiverr-style bidding marketplace where job seekers discover and bid on client projects with full project posting and communication workflows.",
       "url": "https://www.matchcreatorz.com",
       "playstore": "",
@@ -179,6 +203,7 @@
     },
     {
       "name": "QR-Based Activity Tracker (Samsung)",
+      "visible": true,
       "description": "QR-based customer engagement platform for Samsung retail stores across India, tracking user interactions and sending real-time analytics.",
       "url": "https://aiusecase.galaxyaiagent.com",
       "playstore": "",
@@ -190,6 +215,39 @@
         "Developed a QR-based customer engagement platform for Samsung retail stores across India.",
         "Enabled users to scan QR codes to access AI smartphone features, videos, and product information.",
         "Built APIs to track user interactions and send real-time analytics to the Samsung backend for store-wise visitor insights and engagement reporting."
+      ]
+    },
+    {
+      "name": "AI Trip Planner",
+      "visible": false,
+      "description": "Gemini-powered trip planning feature that generates personalized itineraries and destination recommendations based on user preferences, past visits, and travel history.",
+      "url": "",
+      "playstore": "",
+      "appstore": "",
+      "image": "",
+      "ext": "ai",
+      "stack": ["Node.js", "ExpressJS", "React.js", "Gemini API", "MongoDB"],
+      "points": [
+        "Built an AI-powered trip planning feature using Google Gemini API to recommend location-based trips personalized to each user's preferences, past visits, and travel history.",
+        "Designed prompt pipelines that combine user profile data, past visit history, and real-time location context to generate ranked itinerary and destination suggestions via Gemini.",
+        "Integrated Gemini's recommendation output into a React.js interface for interactive trip discovery, with fallback logic for low-confidence or ambiguous responses."
+      ]
+    },
+    {
+      "name": "SRS RAG Assistant",
+      "visible": false,
+      "description": "RAG-based AI assistant that lets project teams query 100+ page SRS PDFs in natural language, auto-generating module and API breakdowns to speed up sprint planning.",
+      "url": "",
+      "playstore": "",
+      "appstore": "",
+      "image": "",
+      "ext": "ai",
+      "stack": ["Node.js", "LangChain", "Pinecone", "Gemini API"],
+      "points": [
+        "Built a Retrieval-Augmented Generation (RAG) system so project teams can query 100+ page SRS PDFs in natural language instead of reading them manually.",
+        "Implemented a PDF ingestion, chunking, and embedding pipeline that stores document vectors in Pinecone for fast semantic search across SRS content.",
+        "Used Gemini to generate grounded, cited answers from retrieved SRS chunks, letting developers ask questions and get direct references back to the source document.",
+        "Extended the assistant to auto-generate module-wise and API-wise breakdowns from the SRS, cutting manual review time and speeding up sprint planning and API design."
       ]
     }
   ],
