@@ -200,7 +200,6 @@ function renderProjects(projects) {
          </div>`;
 
     const links = [];
-    if (p.url)       links.push(`<a class="pcard-link pcard-link-web"   href="${p.url}"       target="_blank" rel="noopener">${GLOBE_ICON} Website</a>`);
     if (p.playstore) links.push(`<a class="pcard-link pcard-link-play"  href="${p.playstore}" target="_blank" rel="noopener">${PLAY_ICON} Play Store</a>`);
     if (p.appstore)  links.push(`<a class="pcard-link pcard-link-apple" href="${p.appstore}"  target="_blank" rel="noopener">${APPLE_ICON} App Store</a>`);
 
