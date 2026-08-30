@@ -13,7 +13,7 @@
       "id": "greeting",
       "patterns": ["hi", "hello", "hey", "what's up", "howdy", "good morning", "good evening", "hola", "sup"],
       "responses": [
-        "Hey there! 👋 I'm rahul.bot. Ask me about Rahul's skills, projects, work experience, or how to reach him.",
+        "Hey there! 👋 I'm rahul.assistant. Ask me about Rahul's skills, projects, work experience, or how to reach him.",
         "Hello! I can tell you all about Rahul — his tech stack, projects, work history, or contact info. What would you like to know?",
         "Hi! 🙂 Feel free to ask me anything about Rahul Dubey."
       ]

@@ -1,5 +1,5 @@
 /* =========================================================
-   CHATBOT — rahul.bot
+   CHATBOT — rahul.assistant 
    Loads intents from data/chat_data/intents.json
    Pure vanilla JS, no dependencies.
 ========================================================= */
@@ -44,7 +44,7 @@
     if (!greeted) {
       greeted = true;
       setTimeout(() => {
-        const greeting = intentsData?.meta?.greeting || "Hey! I'm rahul.bot. Ask me about Rahul.";
+        const greeting = intentsData?.meta?.greeting || "Hey! I'm rahul.assistant. Ask me about Rahul.";
         appendMessage('bot', greeting);
       }, 320);
     }
