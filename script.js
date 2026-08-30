@@ -256,7 +256,9 @@ function renderProjects(projects) {
 
   function goTo(idx) {
     current = (idx + visible.length) % visible.length;
-    carousel.scrollTo({ left: cards[current].offsetLeft, behavior: 'smooth' });
+    const card = cards[current];
+    // scroll the card into view relative to the carousel container
+    carousel.scrollTo({ left: card.offsetLeft - carousel.offsetLeft, behavior: 'smooth' });
     dots.forEach((d, i) => d.classList.toggle('active', i === current));
     countEl.textContent = `${current + 1} / ${visible.length}`;
   }
@@ -276,19 +278,26 @@ function renderProjects(projects) {
     });
   });
 
-  // sync dots on native scroll
+  // sync dots on native scroll (use getBoundingClientRect for accuracy)
   let scrollTimer;
   carousel.addEventListener('scroll', () => {
     clearTimeout(scrollTimer);
     scrollTimer = setTimeout(() => {
-      const mid = carousel.scrollLeft + carousel.clientWidth / 2;
+      const carouselRect = carousel.getBoundingClientRect();
+      const midX = carouselRect.left + carouselRect.width / 2;
+      let closest = 0;
+      let closestDist = Infinity;
       cards.forEach((card, i) => {
-        if (card.offsetLeft <= mid && card.offsetLeft + card.offsetWidth > mid) {
-          current = i;
-          dots.forEach((d, j) => d.classList.toggle('active', j === i));
-          countEl.textContent = `${i + 1} / ${visible.length}`;
-        }
+        const rect = card.getBoundingClientRect();
+        const cardMid = rect.left + rect.width / 2;
+        const dist = Math.abs(cardMid - midX);
+        if (dist < closestDist) { closestDist = dist; closest = i; }
       });
+      if (closest !== current) {
+        current = closest;
+        dots.forEach((d, j) => d.classList.toggle('active', j === current));
+        countEl.textContent = `${current + 1} / ${visible.length}`;
+      }
     }, 80);
   });
 }
