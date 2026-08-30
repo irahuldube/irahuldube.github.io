@@ -73,7 +73,7 @@
     {
       "category": "familiar_with",
       "visible": true,
-      "items": ["React"]
+      "items": ["React", "RAG (Retrieval-Augmented Generation)"]
     }
   ],
   "experience": [
@@ -98,7 +98,7 @@
       "company": "SeekAce Solutions",
       "url": "https://www.seekace.com",
       "location": "Jaipur, Rajasthan · Software Development",
-      "duration": "Jun 2021 — Jan 2022",
+      "duration": "July 2021 — Dec 2021",
       "current": false,
       "certificate": "data/Intern-certificate.jpg",
       "points": [
