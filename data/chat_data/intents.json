@@ -1,0 +1,158 @@
+{
+  "meta": {
+    "botName": "rahul.assistant",
+    "greeting": "Hey! I'm rahul.assistant 👋 Ask me anything about Rahul — his skills, projects, experience, or how to get in touch.",
+    "fallback": [
+      "Hmm, I'm not sure about that. Try asking about Rahul's skills, projects, or experience.",
+      "I didn't quite catch that. You can ask things like 'What are his skills?' or 'Tell me about his projects'.",
+      "Not sure I have an answer for that. Try asking about Rahul's background, tech stack, or contact info."
+    ]
+  },
+  "intents": [
+    {
+      "id": "greeting",
+      "patterns": ["hi", "hello", "hey", "what's up", "howdy", "good morning", "good evening", "hola", "sup"],
+      "responses": [
+        "Hey there! 👋 I'm rahul.bot. Ask me about Rahul's skills, projects, work experience, or how to reach him.",
+        "Hello! I can tell you all about Rahul — his tech stack, projects, work history, or contact info. What would you like to know?",
+        "Hi! 🙂 Feel free to ask me anything about Rahul Dubey."
+      ]
+    },
+    {
+      "id": "who_is_rahul",
+      "patterns": ["who is rahul", "who are you", "about rahul", "tell me about rahul", "introduce yourself", "about you", "who is he"],
+      "responses": [
+        "Rahul Dubey is a Backend Developer with 5+ years of experience building scalable RESTful APIs and full-stack web apps using Node.js, NestJS, and ExpressJS. He's based in Ajmer, Rajasthan, India.",
+        "Rahul is a backend-focused engineer who's delivered 10+ production projects across domains like ride-hailing, e-commerce, healthcare, and SaaS. His core stack is Node.js · NestJS · ExpressJS · MongoDB · MySQL."
+      ]
+    },
+    {
+      "id": "skills",
+      "patterns": ["skills", "tech stack", "technologies", "what can he do", "what does he know", "expertise", "programming", "languages", "frameworks", "tools"],
+      "responses": [
+        "Rahul's core stack: Node.js · NestJS · ExpressJS · TypeScript · MongoDB · MySQL · PostgreSQL · Redis. He also works with TypeORM, Sequelize, Mongoose, Stripe, and deploys on Linux with Nginx.",
+        "Backend: Node.js, NestJS, ExpressJS\nDatabases: MongoDB, MySQL, PostgreSQL, Redis\nORMs: TypeORM, Sequelize, Mongoose\nPayments: Stripe, UPI\nDevOps: Linux, Nginx, Git\nAI/ML: Gemini API, RAG, LangChain, Vector DBs"
+      ]
+    },
+    {
+      "id": "experience",
+      "patterns": ["experience", "work history", "jobs", "where has he worked", "employment", "companies", "career"],
+      "responses": [
+        "Rahul currently works at Konstant Infosolutions Pvt. Ltd. (Jan 2022 – Present) as a Backend Developer, building scalable APIs across 10+ client projects. Before that he was a Junior Frontend Developer at SeekAce Solutions (Jun 2021 – Jan 2022).",
+        "He has 5+ years of experience. Currently at Konstant Infosolutions building REST APIs, payment integrations (Stripe/UPI), and deploying on Linux/Nginx. Previously at SeekAce Solutions doing frontend work."
+      ]
+    },
+    {
+      "id": "current_job",
+      "patterns": ["current job", "current company", "where does he work", "konstant", "current role"],
+      "responses": [
+        "Rahul is currently a Backend Developer at Konstant Infosolutions Pvt. Ltd. in Jaipur. He's been there since January 2022, working on scalable APIs, payment integrations, and full-stack delivery across multiple domains.",
+        "He's at Konstant Infosolutions — an IT services company in Jaipur — building Node.js/NestJS APIs, integrating Stripe/UPI payments, and managing deployments on Linux + Nginx."
+      ]
+    },
+    {
+      "id": "projects",
+      "patterns": ["projects", "what has he built", "portfolio", "work examples", "project list", "what projects"],
+      "responses": [
+        "Rahul has built 7+ featured projects including:\n• On-Demand Service Platform (Node.js, Stripe)\n• E-Commerce Platform (UPI/Stripe, MongoDB)\n• Tour & Travel App (Gemini AI recommendations)\n• Doctor/Patient Appointment App\n• Samsung QR Activity Tracker\n• SRS RAG Assistant (LangChain, Pinecone)\n\nCheck the Projects section on this page for full details!",
+        "Some notable projects: a multi-service on-demand platform, an e-commerce SaaS with subscription billing, a Samsung QR engagement tracker, and an AI-powered RAG assistant for SRS documents. Scroll to the Projects section to explore them all!"
+      ]
+    },
+    {
+      "id": "ai_projects",
+      "patterns": ["ai project", "ai work", "machine learning", "rag", "gemini", "langchain", "llm", "artificial intelligence"],
+      "responses": [
+        "Rahul has two AI projects:\n\n1. AI Trip Planner — Uses Gemini API to generate personalized itineraries based on user preferences and travel history.\n\n2. SRS RAG Assistant — A LangChain + Pinecone RAG system that lets teams query 100+ page SRS PDFs in natural language, with Gemini generating cited answers.",
+        "He built a RAG-based document assistant using LangChain, Pinecone (vector DB), and Gemini API — teams can ask questions about large SRS PDFs and get direct, cited answers. He also built an AI trip planner powered by Gemini."
+      ]
+    },
+    {
+      "id": "education",
+      "patterns": ["education", "degree", "college", "university", "qualification", "studied", "study", "btech", "b.tech"],
+      "responses": [
+        "Rahul holds a B.Tech in Computer Science & Engineering from St. Wilfred Institute of Engineering & Technology (2016–2020), with an aggregate of 64%.",
+        "He completed his B.Tech (CSE) in 2020 from St. Wilfred's Institute, Rajasthan."
+      ]
+    },
+    {
+      "id": "certifications",
+      "patterns": ["certifications", "certificates", "courses", "certified", "achievements"],
+      "responses": [
+        "Rahul's certifications include:\n• AI Agent from Scratch — WSCubeTech\n• AI Engineering Roadmap 2026 — WSCubeTech\n• AWS Community Day Participation\n• Claude API & Claude Code — Anthropic/Skilljar\n• White Hat Hacker & Penetration Tester — Eduonix\n• SEMrush SEO Toolkit Exam\n• Web Developer Course Completion"
+      ]
+    },
+    {
+      "id": "contact",
+      "patterns": ["contact", "email", "reach", "hire", "phone", "linkedin", "github", "get in touch", "connect", "message"],
+      "responses": [
+        "You can reach Rahul at:\n📧 dubeyrahul890@gmail.com\n📞 +91 7014615922\n💼 linkedin.com/in/irahuldube\n🐙 github.com/irahuldube",
+        "Best ways to connect with Rahul:\n• Email: dubeyrahul890@gmail.com\n• LinkedIn: linkedin.com/in/irahuldube\n• GitHub: github.com/irahuldube\n• Phone: +91 7014615922"
+      ]
+    },
+    {
+      "id": "location",
+      "patterns": ["location", "where is he", "where does he live", "city", "india", "ajmer", "rajasthan"],
+      "responses": [
+        "Rahul is based in Ajmer, Rajasthan, India.",
+        "He's located in Ajmer, Rajasthan, India — and open to remote opportunities."
+      ]
+    },
+    {
+      "id": "availability",
+      "patterns": ["available", "hire", "open to work", "looking for job", "freelance", "opportunities", "open to opportunities"],
+      "responses": [
+        "Yes! Rahul is open to backend / full-stack roles where scale, clean architecture, and API design matter. Feel free to reach out at dubeyrahul890@gmail.com.",
+        "Rahul is currently available for backend or full-stack opportunities. You can contact him on LinkedIn or email dubeyrahul890@gmail.com."
+      ]
+    },
+    {
+      "id": "nodejs",
+      "patterns": ["node.js", "nodejs", "node js", "express", "expressjs", "nestjs"],
+      "responses": [
+        "Node.js is Rahul's primary runtime. He has 5+ years building production APIs with ExpressJS and NestJS across 10+ client projects — covering authentication, payments, real-time sockets, and more.",
+        "He's very proficient in Node.js (ExpressJS & NestJS), having used it to build everything from ride-hailing APIs to Samsung's QR engagement platform."
+      ]
+    },
+    {
+      "id": "databases",
+      "patterns": ["database", "mongodb", "mysql", "postgres", "postgresql", "redis", "sql", "nosql"],
+      "responses": [
+        "Rahul works with MongoDB, MySQL, PostgreSQL, and Redis. He uses Mongoose for MongoDB, TypeORM/Sequelize for SQL databases, and Redis for caching and queuing.",
+        "His database experience spans NoSQL (MongoDB) and SQL (MySQL, PostgreSQL), with Redis for caching. He handles schema design, optimization, and ORM layers."
+      ]
+    },
+    {
+      "id": "payments",
+      "patterns": ["payment", "stripe", "upi", "billing", "subscription", "payment gateway"],
+      "responses": [
+        "Rahul has implemented Stripe and UPI payment integrations across multiple projects — including subscription billing, wallet systems, webhooks, and refund flows.",
+        "He's built full payment lifecycles with Stripe (subscriptions, webhooks, refunds) and UPI integrations in e-commerce and on-demand service platforms."
+      ]
+    },
+    {
+      "id": "resume",
+      "patterns": ["resume", "cv", "download resume", "portfolio pdf"],
+      "responses": [
+        "You can download Rahul's resume using the 'Download Resume' button on this page, or directly at: ./data/Backend-5EXP-Resume.Rahul_Dubey.pdf",
+        "His resume is available for download — look for the 'Download Resume' button in the hero section of this page!"
+      ]
+    },
+    {
+      "id": "thanks",
+      "patterns": ["thanks", "thank you", "thx", "ty", "appreciate", "great", "awesome", "cool", "perfect"],
+      "responses": [
+        "Glad I could help! 😊 Anything else you'd like to know about Rahul?",
+        "You're welcome! Feel free to ask anything else.",
+        "Happy to help! 🙂"
+      ]
+    },
+    {
+      "id": "bye",
+      "patterns": ["bye", "goodbye", "see you", "cya", "later", "take care", "exit", "close"],
+      "responses": [
+        "Bye! Feel free to come back if you have more questions. 👋",
+        "Take care! Don't hesitate to reach out if you need anything else. 😊"
+      ]
+    }
+  ]
+}

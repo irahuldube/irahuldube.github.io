@@ -154,10 +154,11 @@ function renderExperience(experience) {
   wrap.innerHTML = experience.map(job => `
     <div class="timeline-item ${job.current ? 'current' : ''}">
       <span class="timeline-dot"></span>
-      <div class="timeline-card">
+      <div class="timeline-card ${job.certificate ? 'has-cert' : ''}" ${job.certificate ? `data-cert="${job.certificate}" data-cert-title="${escapeHtml(job.company)} — Internship Certificate"` : ''}>
         <div class="timeline-header">
           <span class="timeline-role">${escapeHtml(job.role)}</span>
           ${job.current ? '<span class="timeline-badge">● current</span>' : ''}
+          ${job.certificate ? '<span class="timeline-cert-badge">🎓 View Certificate</span>' : ''}
         </div>
         <div class="timeline-company">
           ${job.url
@@ -171,6 +172,15 @@ function renderExperience(experience) {
       </div>
     </div>
   `).join('');
+
+  // wire up certificate click
+  wrap.querySelectorAll('.timeline-card.has-cert').forEach(card => {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('a')) return;
+      openCertModal(card.dataset.cert, card.dataset.certTitle);
+    });
+  });
 }
 
 /* ---------------- PROJECTS ---------------- */
@@ -284,6 +294,26 @@ function renderProjects(projects) {
 }
 
 
+/* ---------------- CERTIFICATE MODAL ---------------- */
+function openCertModal(src, title) {
+  const modal = document.getElementById('certModal');
+  const img   = document.getElementById('certModalImg');
+  const ttl   = document.getElementById('certModalTitle');
+  img.src = src;
+  img.alt = title;
+  ttl.textContent = title;
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('no-scroll');
+}
+
+function closeCertModal() {
+  const modal = document.getElementById('certModal');
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('no-scroll');
+}
+
 /* ---------------- EDUCATION ---------------- */
 function renderEducation(education) {
   const wrap = document.getElementById('eduBlock');
@@ -347,6 +377,12 @@ function escapeHtml(str) {
 ========================================================= */
 document.addEventListener('DOMContentLoaded', () => {
   loadData();
+
+  // cert modal close
+  const certModal = document.getElementById('certModal');
+  document.getElementById('certModalClose').addEventListener('click', closeCertModal);
+  certModal.addEventListener('click', e => { if (e.target === certModal) closeCertModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && certModal.classList.contains('open')) closeCertModal(); });
 
   const sidebar = document.getElementById('sidebar');
   const menuBtn = document.getElementById('menuBtn');
