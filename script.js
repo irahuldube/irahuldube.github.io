@@ -395,26 +395,25 @@ document.addEventListener('DOMContentLoaded', () => {
   scrim.className = 'sidebar-scrim';
   document.body.appendChild(scrim);
 
-  function openDrawer() {
-    sidebar.classList.add('open');
-    scrim.classList.add('show');
-    document.body.classList.add('no-scroll');
-    menuBtn.setAttribute('aria-expanded', 'true');
+  if (menuBtn) {
+    function openDrawer() {
+      sidebar.classList.add('open');
+      scrim.classList.add('show');
+      document.body.classList.add('no-scroll');
+      menuBtn.setAttribute('aria-expanded', 'true');
+    }
+    function closeDrawer() {
+      sidebar.classList.remove('open');
+      scrim.classList.remove('show');
+      document.body.classList.remove('no-scroll');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }
+    menuBtn.addEventListener('click', () => {
+      sidebar.classList.contains('open') ? closeDrawer() : openDrawer();
+    });
+    scrim.addEventListener('click', closeDrawer);
+    fileItems.forEach(item => item.addEventListener('click', () => closeDrawer()));
   }
-  function closeDrawer() {
-    sidebar.classList.remove('open');
-    scrim.classList.remove('show');
-    document.body.classList.remove('no-scroll');
-    menuBtn.setAttribute('aria-expanded', 'false');
-  }
-  menuBtn.addEventListener('click', () => {
-    sidebar.classList.contains('open') ? closeDrawer() : openDrawer();
-  });
-  scrim.addEventListener('click', closeDrawer);
-
-  fileItems.forEach(item => {
-    item.addEventListener('click', () => closeDrawer());
-  });
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
