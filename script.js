@@ -257,8 +257,13 @@ function renderProjects(projects) {
   function goTo(idx) {
     current = (idx + visible.length) % visible.length;
     const card = cards[current];
-    // scroll the card into view relative to the carousel container
-    carousel.scrollTo({ left: card.offsetLeft - carousel.offsetLeft, behavior: 'smooth' });
+    // Use getBoundingClientRect for accurate position relative to carousel
+    const cardLeft = card.getBoundingClientRect().left;
+    const containerLeft = carousel.getBoundingClientRect().left;
+    carousel.scrollTo({
+      left: carousel.scrollLeft + (cardLeft - containerLeft),
+      behavior: 'smooth'
+    });
     dots.forEach((d, i) => d.classList.toggle('active', i === current));
     countEl.textContent = `${current + 1} / ${visible.length}`;
   }
@@ -298,7 +303,7 @@ function renderProjects(projects) {
         dots.forEach((d, j) => d.classList.toggle('active', j === current));
         countEl.textContent = `${current + 1} / ${visible.length}`;
       }
-    }, 80);
+    }, 150);
   });
 }
 
