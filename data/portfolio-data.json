@@ -1,0 +1,72 @@
+{
+  "meta": {
+    "availability": "Open to Freelance Projects",
+    "waMessage": "Hi! I found your portfolio and I'd like to discuss a project.",
+    "typewriterWords": [
+      "REST APIs",
+      "SaaS Backends",
+      "Payment Systems",
+      "AI Integrations",
+      "E-Commerce Apps",
+      "Scalable Architectures",
+      "Automation Tools"
+    ],
+    "heroStats": [
+      { "count": 5,   "suffix": "+", "label": "Years Exp"  },
+      { "count": 20,  "suffix": "+", "label": "Projects"   },
+      { "count": 10,  "suffix": "+", "label": "Clients"    },
+      { "count": 100, "suffix": "%", "label": "On-Time"    }
+    ],
+    "whyCards": [
+      { "icon": "🎯", "count": 100, "suffix": "%", "label": "Clean Code",        "desc": "Readable, documented, maintainable — built to scale, not just to ship."              },
+      { "icon": "⚡", "count": 5,   "suffix": "+", "label": "Years Experience",  "desc": "Proven across 20+ production projects in e-commerce, SaaS, healthcare & IoT."      },
+      { "icon": "💬", "count": 24,  "suffix": "h", "label": "Response Time",     "desc": "Quick replies, regular updates, transparent communication throughout."               },
+      { "icon": "🔒", "count": 100, "suffix": "%", "label": "Secure by Default", "desc": "JWT, OAuth2, input validation, and secure payment flows from day one."               }
+    ]
+  },
+  "services": [
+    {
+      "icon": "⚡",
+      "title": "REST API Development",
+      "desc": "Scalable, documented REST APIs with Node.js, NestJS, or ExpressJS — from auth to complex business logic.",
+      "tags": ["Node.js", "NestJS", "ExpressJS", "TypeScript"]
+    },
+    {
+      "icon": "🛒",
+      "title": "E-Commerce & Payments",
+      "desc": "Full e-commerce backends with Stripe, UPI, subscriptions, wallets, and webhooks. B2C and B2B ready.",
+      "tags": ["Stripe", "UPI", "MongoDB", "Subscriptions"]
+    },
+    {
+      "icon": "☁️",
+      "title": "SaaS & Multi-Tenant Apps",
+      "desc": "Multi-tenant SaaS platforms with role-based access, billing, and architecture built to scale.",
+      "tags": ["NestJS", "TypeORM", "PostgreSQL", "Redis"]
+    },
+    {
+      "icon": "🤖",
+      "title": "AI / LLM Integration",
+      "desc": "Integrate Gemini or OpenAI, build RAG pipelines with LangChain and vector databases into your product.",
+      "tags": ["Gemini API", "LangChain", "Pinecone", "RAG"]
+    },
+    {
+      "icon": "🗄️",
+      "title": "Database Architecture",
+      "desc": "Schema design, indexing, and query optimisation across MongoDB, MySQL, and PostgreSQL.",
+      "tags": ["MongoDB", "MySQL", "PostgreSQL", "Redis"]
+    },
+    {
+      "icon": "🚀",
+      "title": "Deployment & DevOps",
+      "desc": "Linux server setup, Nginx reverse proxy, SSL, PM2 process management, and Git-based CI.",
+      "tags": ["Linux", "Nginx", "PM2", "Git"]
+    }
+  ],
+  "process": [
+    { "num": "01", "label": "Discovery", "desc": "We discuss your idea, requirements, and goals."          },
+    { "num": "02", "label": "Proposal",  "desc": "Clear scope, timeline, and pricing upfront."             },
+    { "num": "03", "label": "Build",     "desc": "Iterative dev with regular updates and demos."            },
+    { "num": "04", "label": "Review",    "desc": "You test; I refine until everything is perfect."          },
+    { "num": "05", "label": "Deliver",   "desc": "Code handoff, docs, and deployment support."              }
+  ]
+}

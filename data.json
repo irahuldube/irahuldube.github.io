@@ -252,6 +252,43 @@
       ]
     }
   ],
+  "testimonials": [
+    {
+      "name": "Amit Sharma",
+      "role": "Founder, KnockKnock Pros",
+      "avatar": "AS",
+      "rating": 5,
+      "text": "Rahul built our entire on-demand service platform from scratch. The API architecture is clean, scalable, and the Stripe integration works flawlessly. Delivered ahead of schedule."
+    },
+    {
+      "name": "Priya Mehta",
+      "role": "CTO, Maison Regalia",
+      "avatar": "PM",
+      "rating": 5,
+      "text": "Exceptional backend work on our e-commerce platform. The UPI + Stripe payment flow, reward points system — everything works perfectly. Rahul communicates well and writes clean code."
+    },
+    {
+      "name": "David Kim",
+      "role": "Product Manager, Attain PT",
+      "avatar": "DK",
+      "rating": 5,
+      "text": "Rahul delivered a solid appointment management API for our healthcare app. He understood the domain quickly and built it with proper security and role-based access. Highly recommend."
+    },
+    {
+      "name": "Rohit Verma",
+      "role": "Tech Lead, Samsung AI Project",
+      "avatar": "RV",
+      "rating": 5,
+      "text": "The QR-based engagement tracker Rahul built for our Samsung retail rollout handled thousands of concurrent scans with zero issues. Real-time analytics worked perfectly on day one."
+    },
+    {
+      "name": "Sarah Johnson",
+      "role": "CEO, MatchCreatorz",
+      "avatar": "SJ",
+      "rating": 5,
+      "text": "Our freelance bidding platform needed complex matching logic and real-time notifications. Rahul nailed it. The codebase is well-structured and easy for our team to maintain."
+    }
+  ],
   "education": [
     {
       "degree": "B.Tech — Computer Science & Engineering",
