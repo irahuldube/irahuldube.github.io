@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rahul Dubey — Hire a Backend Developer</title>
-<meta name="description" content="Hire Rahul Dubey — 5+ years Node.js backend developer. REST APIs, SaaS, Payments, AI. Contact via WhatsApp or Email.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>�</text></svg>">
+<title id="pf-page-title">Portfolio</title>
+<meta name="description" id="pf-page-desc" content="">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -15,119 +15,89 @@
 
 <canvas id="pf-canvas" aria-hidden="true"></canvas>
 
-<!-- ============ NAV ============ -->
+<!-- NAV -->
 <nav class="nav" id="pf-nav">
   <div class="nav-logo">
-    <span class="nav-logo-flame">🔥</span>
-    <span id="pf-nav-name">rahul.dev</span>
+    <span id="pf-nav-emoji" class="nav-logo-flame"></span>
+    <span id="pf-nav-name"></span>
   </div>
-  <div class="nav-links" id="pf-nav-links">
-    <a href="#services" class="nav-link">Services</a>
-    <a href="#projects" class="nav-link">Projects</a>
-    <a href="#why"      class="nav-link">Why Me</a>
-    <a href="#process"  class="nav-link">Process</a>
-    <a href="#testimonials" class="nav-link">Reviews</a>
-    <a href="#contact"  class="nav-link nav-cta">Hire Me</a>
-  </div>
+  <div class="nav-links" id="pf-nav-links"></div>
   <button class="nav-hamburger" id="pf-hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
-<!-- ============ HERO ============ -->
+<!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
   <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
   <div class="hero-orb hero-orb-3" aria-hidden="true"></div>
-
   <div class="hero-inner">
     <div class="hero-badge">
       <span class="hero-badge-dot"></span>
-      <span id="pf-availability-text">Open to Freelance Projects</span>
+      <span id="pf-availability-text"></span>
     </div>
-
-    <h1 class="hero-name" id="pf-hero-name">I'm <span class="hero-name-accent">Rahul</span></h1>
-
+    <h1 class="hero-name" id="pf-hero-name"></h1>
     <div class="hero-typewriter-wrap">
-      <span class="hero-tw-prefix">I build </span>
+      <span class="hero-tw-prefix" id="pf-tw-prefix"></span>
       <span class="hero-tw-text" id="pf-typewriter"></span>
     </div>
-
-    <p class="hero-sub" id="pf-hero-sub">Backend Developer · 5+ years shipping production-ready APIs for startups and enterprises across India and beyond.</p>
-
-    <div class="hero-ctas">
-      <a href="#" id="pf-wa-btn" class="btn-wa" target="_blank" rel="noopener">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.85.505 3.58 1.383 5.065L2.05 21.95l5.003-1.312A9.957 9.957 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.95 7.95 0 0 1-4.073-1.117l-.292-.173-3.005.788.802-2.93-.19-.302A7.957 7.957 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
-        WhatsApp Me
-      </a>
-      <a href="#" id="pf-email-btn" class="btn-email">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        Send Email
-      </a>
-      <a href="#projects" class="btn-ghost">View Work ↓</a>
-    </div>
-
+    <p class="hero-sub" id="pf-hero-sub"></p>
+    <div class="hero-ctas" id="pf-hero-ctas"></div>
     <div class="hero-stats" id="pf-hero-stats"></div>
   </div>
-
   <a href="#services" class="scroll-cue" aria-label="Scroll down">
     <span class="scroll-cue-line"></span>
   </a>
 </section>
 
-<!-- ============ SERVICES ============ -->
+<!-- SERVICES -->
 <section id="services" class="section-dark">
   <div class="section-wrap">
-    <div class="section-eyebrow">What I Do</div>
-    <h2 class="section-heading">Services</h2>
-    <p class="section-sub">End-to-end backend development — from architecture to deployment.</p>
+    <div class="section-eyebrow" id="pf-svc-eyebrow"></div>
+    <h2 class="section-heading" id="pf-svc-heading"></h2>
+    <p class="section-sub" id="pf-svc-sub"></p>
     <div class="services-grid" id="pf-services"></div>
   </div>
 </section>
 
-<!-- ============ PROJECTS ============ -->
+<!-- PROJECTS -->
 <section id="projects" class="section-darker">
   <div class="section-wrap">
-    <div class="section-eyebrow">My Work</div>
-    <h2 class="section-heading">Featured Projects</h2>
-    <p class="section-sub">Real products shipped for real clients across multiple industries.</p>
-    <div class="filter-row">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="api">API</button>
-      <button class="filter-btn" data-filter="saas">SaaS</button>
-      <button class="filter-btn" data-filter="iot">IoT</button>
-      <button class="filter-btn" data-filter="ai">AI</button>
-    </div>
+    <div class="section-eyebrow" id="pf-proj-eyebrow"></div>
+    <h2 class="section-heading" id="pf-proj-heading"></h2>
+    <p class="section-sub" id="pf-proj-sub"></p>
+    <div class="filter-row" id="pf-filter-row"></div>
     <div class="projects-grid" id="pf-projects"></div>
   </div>
 </section>
 
-<!-- ============ WHY ME ============ -->
+<!-- WHY ME -->
 <section id="why" class="section-dark">
   <div class="section-wrap section-center">
-    <div class="section-eyebrow">Why Choose Me</div>
-    <h2 class="section-heading">What You Get</h2>
-    <p class="section-sub">Beyond code — I care about your product's success.</p>
+    <div class="section-eyebrow" id="pf-why-eyebrow"></div>
+    <h2 class="section-heading" id="pf-why-heading"></h2>
+    <p class="section-sub" id="pf-why-sub"></p>
     <div class="why-grid" id="pf-why-grid"></div>
   </div>
 </section>
 
-<!-- ============ PROCESS ============ -->
+<!-- PROCESS -->
 <section id="process" class="section-darker">
   <div class="section-wrap section-center">
-    <div class="section-eyebrow">How It Works</div>
-    <h2 class="section-heading">My Process</h2>
-    <p class="section-sub">Simple, transparent, and stress-free from start to finish.</p>
+    <div class="section-eyebrow" id="pf-proc-eyebrow"></div>
+    <h2 class="section-heading" id="pf-proc-heading"></h2>
+    <p class="section-sub" id="pf-proc-sub"></p>
     <div class="process-track" id="pf-process"></div>
   </div>
 </section>
 
-<!-- ============ TESTIMONIALS ============ -->
+<!-- TESTIMONIALS -->
 <section id="testimonials" class="section-dark">
   <div class="section-wrap section-center">
-    <div class="section-eyebrow">Client Reviews</div>
-    <h2 class="section-heading">What Clients Say</h2>
-    <p class="section-sub">Real feedback from people I've built for.</p>
+    <div class="section-eyebrow" id="pf-test-eyebrow"></div>
+    <h2 class="section-heading" id="pf-test-heading"></h2>
+    <p class="section-sub" id="pf-test-sub"></p>
     <div class="testimonials-track" id="pf-testimonials"></div>
     <div class="testimonials-nav">
       <button class="tnav-btn" id="pf-tprev" aria-label="Previous">
@@ -141,55 +111,23 @@
   </div>
 </section>
 
-<!-- ============ CONTACT ============ -->
+<!-- CONTACT -->
 <section id="contact" class="section-contact">
   <div class="section-wrap section-center">
-    <div class="section-eyebrow">Get In Touch</div>
-    <h2 class="section-heading">Let's Build Something</h2>
-    <p class="section-sub">Have a project? Reach out directly — I respond within a few hours.</p>
-    <div class="contact-cards" id="pf-contact-cards">
-      <a href="#" id="pf-wa-cta" class="contact-card contact-wa" target="_blank" rel="noopener">
-        <div class="contact-card-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="#25d366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.85.505 3.58 1.383 5.065L2.05 21.95l5.003-1.312A9.957 9.957 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.95 7.95 0 0 1-4.073-1.117l-.292-.173-3.005.788.802-2.93-.19-.302A7.957 7.957 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
-        </div>
-        <div class="contact-card-text">
-          <div class="contact-card-label">WhatsApp</div>
-          <div class="contact-card-value">Start a conversation →</div>
-        </div>
-      </a>
-      <a href="#" id="pf-email-cta" class="contact-card contact-em">
-        <div class="contact-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF9933" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        </div>
-        <div class="contact-card-text">
-          <div class="contact-card-label">Email</div>
-          <div class="contact-card-value" id="pf-email-cta-val">Send a mail →</div>
-        </div>
-      </a>
-      <a href="#" id="pf-li-cta" class="contact-card contact-li" target="_blank" rel="noopener">
-        <div class="contact-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="#0a66c2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-        </div>
-        <div class="contact-card-text">
-          <div class="contact-card-label">LinkedIn</div>
-          <div class="contact-card-value">View Profile →</div>
-        </div>
-      </a>
-    </div>
+    <div class="section-eyebrow" id="pf-cont-eyebrow"></div>
+    <h2 class="section-heading" id="pf-cont-heading"></h2>
+    <p class="section-sub" id="pf-cont-sub"></p>
+    <div class="contact-cards" id="pf-contact-cards"></div>
   </div>
 </section>
 
-<!-- ============ FOOTER ============ -->
+<!-- FOOTER -->
 <footer class="footer">
   <div class="footer-left">
-    <span class="footer-name" id="pf-footer-name">Rahul Dubey</span>
-    <span class="footer-copy">© <span id="pf-year"></span> · All rights reserved</span>
+    <span class="footer-name" id="pf-footer-name"></span>
+    <span class="footer-copy">© <span id="pf-year"></span> · <span id="pf-footer-tagline"></span></span>
   </div>
-  <div class="footer-links">
-    <a href="#" id="pf-footer-wa" target="_blank" rel="noopener">WhatsApp</a>
-    <a href="#" id="pf-footer-email">Email</a>
-    <a href="#" id="pf-footer-li" target="_blank" rel="noopener">LinkedIn</a>
-  </div>
+  <div class="footer-links" id="pf-footer-links"></div>
 </footer>
 
 <script src="assets/js/portfolio.js"></script>

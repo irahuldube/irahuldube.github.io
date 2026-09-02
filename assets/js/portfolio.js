@@ -1,22 +1,30 @@
 /* =========================================================
    FREELANCE PORTFOLIO — portfolio.js
-   All data driven from data.json + data/portfolio-data.json
+   100% data-driven: data.json + data/portfolio-data.json
 ========================================================= */
 (function () {
   'use strict';
 
   const EXT_MAP = { api: 'API', saas: 'SaaS', iot: 'IoT', ai: 'AI' };
 
-  /* ---- init: fetch both JSON files in parallel ---- */
+  const WA_SVG = `<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.85.505 3.58 1.383 5.065L2.05 21.95l5.003-1.312A9.957 9.957 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.95 7.95 0 0 1-4.073-1.117l-.292-.173-3.005.788.802-2.93-.19-.302A7.957 7.957 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>`;
+  const EMAIL_SVG = `<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>`;
+  const WA_ICON   = `<svg width="26" height="26" viewBox="0 0 24 24" fill="#25d366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.85.505 3.58 1.383 5.065L2.05 21.95l5.003-1.312A9.957 9.957 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.95 7.95 0 0 1-4.073-1.117l-.292-.173-3.005.788.802-2.93-.19-.302A7.957 7.957 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>`;
+  const EM_ICON   = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF9933" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>`;
+  const LI_ICON   = `<svg width="24" height="24" viewBox="0 0 24 24" fill="#0a66c2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>`;
+  const VISIT_SVG = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10 15 15 0 0 1 4-10z"/></svg>`;
+
+  /* ---- init ---- */
   async function init() {
     try {
       const [main, pf] = await Promise.all([
-        fetch('data.json',              { cache: 'no-store' }).then(r => r.json()),
-        fetch('data/portfolio-data.json', { cache: 'no-store' }).then(r => r.json())
+        fetch('data.json',               { cache: 'no-store' }).then(r => r.json()),
+        fetch('data/portfolio-data.json',{ cache: 'no-store' }).then(r => r.json())
       ]);
       populate(main, pf);
-    } catch (e) { console.error('[portfolio]', e); }
-
+    } catch (e) {
+      console.error('[portfolio]', e);
+    }
     initCanvas();
     initNav();
     initCounters();
@@ -26,41 +34,85 @@
 
   /* ---- populate ---- */
   function populate(main, pf) {
-    const p  = main.profile;
-    const m  = pf.meta;
+    const p = main.profile;
+    const m = pf.meta;
     const wa = `https://wa.me/${p.phone.replace(/\D/g,'')}?text=${encodeURIComponent(m.waMessage)}`;
 
-    // nav + hero
-    set('pf-nav-name',          p.name.split(' ')[0].toLowerCase() + '.dev');
-    set('pf-hero-name',         `I'm <span class="hero-name-accent">${p.name}</span>`, true);
-    set('pf-hero-sub',          `${p.title} · ${p.experience} building production-ready backends for startups and enterprises.`);
+    // page meta
+    document.title = m.pageTitle;
+    const desc = document.getElementById('pf-page-desc');
+    if (desc) desc.setAttribute('content', m.description);
+
+    // nav
+    set('pf-nav-emoji', m.navLogoEmoji);
+    set('pf-nav-name',  p.name.split(' ')[0].toLowerCase() + '.dev');
+    renderNav(m.nav);
+
+    // hero
     set('pf-availability-text', m.availability);
-
-    // links
-    href('pf-wa-btn',       wa);
-    href('pf-email-btn',    `mailto:${p.email}`);
-    href('pf-wa-cta',       wa);
-    href('pf-email-cta',    `mailto:${p.email}`);
-    href('pf-li-cta',       p.linkedin);
-    href('pf-footer-wa',    `https://wa.me/${p.phone.replace(/\D/g,'')}`);
-    href('pf-footer-email', `mailto:${p.email}`);
-    href('pf-footer-li',    p.linkedin);
-    set('pf-email-cta-val', p.email);
-    set('pf-footer-name',   p.name);
-    set('pf-year',          String(new Date().getFullYear()));
-
-    // hero stats from portfolio-data.json
+    set('pf-hero-name', `I'm <span class="hero-name-accent">${p.name.split(' ')[0]}</span>`, true);
+    set('pf-tw-prefix', m.heroPrefix + ' ');
+    set('pf-hero-sub',  m.heroSub);
+    renderHeroCtas(m.heroCtas, wa, p.email);
     renderHeroStats(m.heroStats);
 
-    // sections
+    // section labels
+    setSectionText('svc',  m.sections.services);
+    setSectionText('proj', m.sections.projects);
+    setSectionText('why',  m.sections.why);
+    setSectionText('proc', m.sections.process);
+    setSectionText('test', m.sections.testimonials);
+    setSectionText('cont', m.sections.contact);
+
+    // project filters — dynamic from unique ext values
+    renderFilterRow(main.projects);
+
+    // content sections
     renderServices(pf.services);
     renderProjects(main.projects);
     renderWhyCards(m.whyCards);
     renderProcess(pf.process);
     renderTestimonials(main.testimonials || []);
+    renderContactCards(m.contactCards, wa, p.email, p.linkedin);
 
-    // typewriter uses portfolio-data words
+    // footer
+    set('pf-footer-name',    p.name);
+    set('pf-year',           String(new Date().getFullYear()));
+    set('pf-footer-tagline', m.footer.tagline);
+    renderFooterLinks(m.footer, wa, p.email, p.linkedin);
+
+    // typewriter
     initTypewriter(m.typewriterWords);
+  }
+
+  /* ---- helpers: set section eyebrow/heading/sub ---- */
+  function setSectionText(prefix, s) {
+    if (!s) return;
+    set(`pf-${prefix}-eyebrow`, s.eyebrow);
+    set(`pf-${prefix}-heading`, s.heading);
+    set(`pf-${prefix}-sub`,     s.sub);
+  }
+
+  /* ---- nav ---- */
+  function renderNav(links) {
+    const w = document.getElementById('pf-nav-links');
+    if (!w || !links) return;
+    w.innerHTML = links.map(l =>
+      `<a href="${l.href}" class="nav-link${l.cta ? ' nav-cta' : ''}">${esc(l.label)}</a>`
+    ).join('');
+  }
+
+  /* ---- hero ctas ---- */
+  function renderHeroCtas(ctas, wa, email) {
+    const w = document.getElementById('pf-hero-ctas');
+    if (!w || !ctas) return;
+    w.innerHTML = ctas.map(c => {
+      if (c.type === 'wa')
+        return `<a href="${wa}" id="${c.id}" class="btn-wa" target="_blank" rel="noopener">${WA_SVG} ${esc(c.label)}</a>`;
+      if (c.type === 'email')
+        return `<a href="mailto:${email}" id="${c.id}" class="btn-email">${EMAIL_SVG} ${esc(c.label)}</a>`;
+      return `<a href="${c.href}" class="btn-ghost">${esc(c.label)}</a>`;
+    }).join('');
   }
 
   /* ---- hero stats ---- */
@@ -73,6 +125,15 @@
         <div class="hero-stat-num" data-count="${s.count}" data-suffix="${s.suffix}">${s.count}${s.suffix}</div>
         <div class="hero-stat-label">${esc(s.label)}</div>
       </div>`).join('');
+  }
+
+  /* ---- filter row ---- */
+  function renderFilterRow(projects) {
+    const w = document.getElementById('pf-filter-row');
+    if (!w) return;
+    const exts = [...new Set(projects.filter(p => p.visible !== false).map(p => p.ext))];
+    w.innerHTML = `<button class="filter-btn active" data-filter="all">All</button>` +
+      exts.map(e => `<button class="filter-btn" data-filter="${e}">${EXT_MAP[e] || e}</button>`).join('');
   }
 
   /* ---- services ---- */
@@ -107,12 +168,11 @@
     const w = document.getElementById('pf-projects');
     if (!w) return;
     w.innerHTML = projects.filter(p => p.visible !== false).map((p, i) => {
-      const badge  = EXT_MAP[p.ext] || p.ext;
-      const live   = p.url || p.playstore || p.appstore || '';
+      const badge   = EXT_MAP[p.ext] || p.ext;
+      const live    = p.url || p.playstore || p.appstore || '';
       const imgBack = p.image
         ? `<img src="${esc(p.image)}" alt="${esc(p.name)}" class="pf-back-img">`
         : `<div class="pf-back-abbr">${esc(p.name.slice(0,2).toUpperCase())}</div>`;
-
       return `
       <div class="pf-card reveal reveal-d${(i % 3) + 1}" data-ext="${p.ext}">
         <div class="pf-card-inner">
@@ -136,13 +196,9 @@
               <div class="pf-back-name">${esc(p.name)}</div>
               <div class="pf-back-desc">${esc(p.description||'')}</div>
               <div class="pf-back-actions">
-                ${live
-                  ? `<a class="pf-back-visit" href="${live}" target="_blank" rel="noopener">
-                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10 15 15 0 0 1 4-10z"/></svg>
-                      Visit Website</a>`
-                  : `<span class="pf-back-no-link">No live URL</span>`
-                }
-                <button class="pf-back-close" aria-label="Flip back">↩ Back</button>
+                ${live ? `<a class="pf-back-visit" href="${live}" target="_blank" rel="noopener">${VISIT_SVG} Visit Website</a>`
+                       : `<span class="pf-back-no-link">No live URL</span>`}
+                <button class="pf-back-close">↩ Back</button>
               </div>
             </div>
           </div>
@@ -196,8 +252,7 @@
         <div class="t-text">${esc(t.text)}</div>
       </div>`).join('');
 
-    const VISIBLE  = 3;
-    const GAP      = 20;
+    const VISIBLE  = 3, GAP = 20;
     const maxIndex = Math.max(0, list.length - VISIBLE);
 
     dotsW.innerHTML = Array.from({ length: maxIndex + 1 }, (_, i) =>
@@ -225,6 +280,38 @@
     });
   }
 
+  /* ---- contact cards ---- */
+  function renderContactCards(cards, wa, email, linkedin) {
+    const w = document.getElementById('pf-contact-cards');
+    if (!w || !cards) return;
+    const iconMap = { wa: WA_ICON, em: EM_ICON, li: LI_ICON };
+    const hrefMap = { wa: wa, em: `mailto:${email}`, li: linkedin };
+    w.innerHTML = cards.map(c => `
+      <a href="${hrefMap[c.type] || '#'}" id="${c.id}" class="contact-card contact-${c.type}"
+         ${c.type !== 'em' ? 'target="_blank" rel="noopener"' : ''}>
+        <div class="contact-card-icon">${iconMap[c.type] || ''}</div>
+        <div class="contact-card-text">
+          <div class="contact-card-label">${esc(c.label)}</div>
+          <div class="contact-card-value">${esc(c.value)}</div>
+        </div>
+      </a>`).join('');
+  }
+
+  /* ---- footer links ---- */
+  function renderFooterLinks(footer, wa, email, linkedin) {
+    const w = document.getElementById('pf-footer-links');
+    if (!w) return;
+    const links = [
+      { href: wa,              label: 'WhatsApp', external: true  },
+      { href: `mailto:${email}`, label: 'Email',  external: false },
+      { href: linkedin,        label: 'LinkedIn', external: true  },
+    ];
+    if (footer.devLink) links.push({ href: footer.devLink.href, label: footer.devLink.label, external: false, cls: 'footer-dev-link' });
+    w.innerHTML = links.map(l =>
+      `<a href="${l.href}" class="${l.cls||''}" ${l.external ? 'target="_blank" rel="noopener"' : ''}>${esc(l.label)}</a>`
+    ).join('');
+  }
+
   /* ---- canvas ---- */
   function initCanvas() {
     const canvas = document.getElementById('pf-canvas');
@@ -233,14 +320,12 @@
     let W, H, pts;
     const COUNT   = 55;
     const PALETTE = [[255,153,51],[240,120,0],[255,190,106],[230,100,0],[255,210,140]];
-
     function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
     function makePoints() {
-      pts = Array.from({length: COUNT}, () => ({
-        x: Math.random()*W, y: Math.random()*H,
-        vx: (Math.random()-.5)*.5, vy: (Math.random()-.5)*.5,
-        r: Math.random()*1.8+.8,
-        c: PALETTE[Math.floor(Math.random()*PALETTE.length)]
+      pts = Array.from({length:COUNT}, () => ({
+        x:Math.random()*W, y:Math.random()*H,
+        vx:(Math.random()-.5)*.5, vy:(Math.random()-.5)*.5,
+        r:Math.random()*1.8+.8, c:PALETTE[Math.floor(Math.random()*PALETTE.length)]
       }));
     }
     function draw() {
@@ -265,7 +350,7 @@
     window.addEventListener('resize', ()=>{ resize(); makePoints(); }, {passive:true});
   }
 
-  /* ---- nav ---- */
+  /* ---- nav scroll + mobile ---- */
   function initNav() {
     const nav = document.getElementById('pf-nav');
     const hbg = document.getElementById('pf-hamburger');
@@ -277,7 +362,7 @@
     }
   }
 
-  /* ---- typewriter (words from portfolio-data.json) ---- */
+  /* ---- typewriter ---- */
   function initTypewriter(words) {
     const el = document.getElementById('pf-typewriter');
     if (!el || !words?.length) return;
@@ -321,23 +406,28 @@
 
   /* ---- filter ---- */
   function initFilter() {
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const f = btn.dataset.filter;
-        document.querySelectorAll('.pf-card').forEach(c => {
-          c.classList.toggle('hidden', f !== 'all' && c.dataset.ext !== f);
-        });
-        document.querySelectorAll('.pf-card:not(.hidden):not(.visible)').forEach(c => c.classList.add('visible'));
+    document.addEventListener('click', e => {
+      const btn = e.target.closest('.filter-btn');
+      if (!btn) return;
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      document.querySelectorAll('.pf-card').forEach(c => {
+        c.classList.toggle('hidden', f !== 'all' && c.dataset.ext !== f);
       });
+      document.querySelectorAll('.pf-card:not(.hidden):not(.visible)').forEach(c => c.classList.add('visible'));
     });
   }
 
   /* ---- utils ---- */
-  function set(id, val, html=false) { const el=document.getElementById(id); if(!el)return; html?el.innerHTML=val:el.textContent=val; }
-  function href(id, val) { const el=document.getElementById(id); if(el)el.href=val; }
-  function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function set(id, val, html=false) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    html ? (el.innerHTML = val) : (el.textContent = val);
+  }
+  function esc(s) {
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
 
   document.addEventListener('DOMContentLoaded', init);
 })();
