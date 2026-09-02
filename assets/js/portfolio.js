@@ -50,7 +50,7 @@
 
     // hero
     set('pf-availability-text', m.availability);
-    set('pf-hero-name', `I'm <span class="hero-name-accent">${p.name.split(' ')[0]}</span>`, true);
+    set('pf-hero-name', `I'm <span class="hero-name-accent">${p.name}</span>`, true);
     set('pf-tw-prefix', m.heroPrefix + ' ');
     set('pf-hero-sub',  m.heroSub);
     renderHeroCtas(m.heroCtas, wa, p.email);
