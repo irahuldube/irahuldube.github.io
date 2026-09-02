@@ -32,7 +32,7 @@
 
     // nav + hero
     set('pf-nav-name',          p.name.split(' ')[0].toLowerCase() + '.dev');
-    set('pf-hero-name',         `I'm <span class="hero-name-accent">${p.name.split(' ')[0]}</span>`, true);
+    set('pf-hero-name',         `I'm <span class="hero-name-accent">${p.name}</span>`, true);
     set('pf-hero-sub',          `${p.title} · ${p.experience} building production-ready backends for startups and enterprises.`);
     set('pf-availability-text', m.availability);
 
