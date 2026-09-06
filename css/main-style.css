@@ -1,25 +1,35 @@
 /* =========================================================
-   TOKENS
+   TOKENS — Colorful Dark Theme
 ========================================================= */
 :root{
-  --bg:            #0a0e14;
-  --bg-editor:     #0d1219;
-  --panel:         #0f1620;
-  --panel-alt:     #131b27;
-  --panel-hover:   #17202c;
-  --border:        #1e2a38;
-  --border-soft:   #16202c;
+  /* backgrounds — deep violet/indigo instead of cold navy */
+  --bg:            #0f0a1e;
+  --bg-editor:     #120d22;
+  --panel:         #16102a;
+  --panel-alt:     #1c1535;
+  --panel-hover:   #221b3e;
+  --border:        #2e2257;
+  --border-soft:   #1e1840;
 
-  --text:          #cbd5e1;
-  --text-dim:      #7c8ba1;
-  --text-faint:    #4b5768;
+  /* text — warm white */
+  --text:          #e8e0ff;
+  --text-dim:      #9d8ec7;
+  --text-faint:    #5c4e80;
 
-  --accent:        #e3a53c;   /* amber - primary */
-  --accent-soft:   rgba(227,165,60,.12);
-  --accent-2:      #4fd1c5;   /* teal - links / secondary */
-  --accent-2-soft: rgba(79,209,197,.12);
-  --accent-3:      #f0796f;   /* soft red - dot/tags */
-  --mono-green:    #7ee787;   /* terminal prompt green */
+  /* accents — vivid & colorful */
+  --accent:        #f59e0b;   /* amber/gold - primary */
+  --accent-soft:   rgba(245,158,11,.14);
+  --accent-2:      #22d3ee;   /* cyan - links / secondary */
+  --accent-2-soft: rgba(34,211,238,.12);
+  --accent-3:      #f87171;   /* coral red - dot/tags */
+  --accent-4:      #a78bfa;   /* violet - highlights */
+  --accent-5:      #34d399;   /* emerald - success */
+  --mono-green:    #4ade80;   /* terminal green */
+
+  /* gradient accents */
+  --grad-primary:  linear-gradient(135deg, #f59e0b 0%, #ef4444 50%, #ec4899 100%);
+  --grad-secondary:linear-gradient(135deg, #22d3ee 0%, #a78bfa 100%);
+  --grad-text:     linear-gradient(135deg, #fff 30%, #a78bfa 100%);
 
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -48,7 +58,7 @@ img{ max-width:100%; display:block; }
 ::-webkit-scrollbar{ width:10px; height:10px; }
 ::-webkit-scrollbar-track{ background:var(--bg); }
 ::-webkit-scrollbar-thumb{ background:var(--border); border-radius:5px; }
-::-webkit-scrollbar-thumb:hover{ background:#2a3a4d; }
+::-webkit-scrollbar-thumb:hover{ background:#3d2d6e; }
 
 :focus-visible{
   outline:2px solid var(--accent-2);
@@ -320,7 +330,7 @@ img{ max-width:100%; display:block; }
   font-size:clamp(20px, 2.8vw, 28px);
   letter-spacing:-.02em;
   margin-bottom:32px;
-  background:linear-gradient(135deg, #fff 40%, var(--accent) 100%);
+  background:linear-gradient(135deg, #fff 40%, var(--accent-4) 100%);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
   background-clip:text;
@@ -441,7 +451,7 @@ img{ max-width:100%; display:block; }
   margin-bottom:6px;
 
   /* gradient text */
-  background:linear-gradient(135deg, #fff 30%, var(--accent) 80%, #f0b756 100%);
+  background:linear-gradient(135deg, #fff 30%, var(--accent) 60%, #ec4899 100%);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
   background-clip:text;

@@ -1,0 +1,325 @@
+Return-Path: <hr@konstantinfo.com>
+Delivered-To: developer27@konstantinfosolutions.com
+Received: from cp-in-14.webhostbox.net
+	by cp-in-14.webhostbox.net with LMTP
+	id WEtRBqr+g2qJiQ8ACwRdkw
+	(envelope-from <hr@konstantinfo.com>)
+	for <developer27@konstantinfosolutions.com>; Tue, 18 Aug 2026 12:11:46 +0530
+Return-path: <hr@konstantinfo.com>
+Envelope-to: rahul.d@konstantinfosolutions.com
+Delivery-date: Tue, 18 Aug 2026 12:11:46 +0530
+Received: from mail-oa1-f47.google.com ([209.85.160.47]:53611)
+	by cp-in-14.webhostbox.net with esmtps  (TLS1.2) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.99.5)
+	(envelope-from <hr@konstantinfo.com>)
+	id 1wwDW5-00000004LDU-0emE
+	for rahul.d@konstantinfosolutions.com;
+	Tue, 18 Aug 2026 12:11:46 +0530
+Received: by mail-oa1-f47.google.com with SMTP id 586e51a60fabf-45ee4251389so1202640fac.3
+        for <rahul.d@konstantinfosolutions.com>; Mon, 17 Aug 2026 23:41:44 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1787035301; cv=none;
+        d=google.com; s=arc-20260327;
+        b=bAexnLdp58xbzYJ3dAnRkZmNNuNiizY98CiVOZ8/s1cXc/hXXuTy18eHF4EarK6oVW
+         NWC0a+W2XRTVoB1u/7FG6zls53u3D8z23JA8fHfxgDAdfZMEPiA7wJpPaTPk7IVJqvVr
+         IrfUlc41GWReBG41q/UGAdrD7jLDwgGeRrqikUqJRQ4Q3jIvy0o0wVhyUEsuNHmjsSW8
+         om1O+4Lfpku5QhBQh/AyoiVB908A/4cMavotrihcicM8MciqyDJWufAXFInSqhj6ooIS
+         XRFWwFme0e9ZAEWorFXXu/V0TfNGepUaK1OxXJ3SqgxJBXBxq5FBhlopJpO3mTu2pl8T
+         JfOQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:dkim-signature;
+        bh=tBIW7zQqGZUTI6zJTV6iI+VRqjAoVg2ir0Uwn2Yoz4c=;
+        fh=h1O1bT6PEidSPQ5Zv6qbaDojSZJyH5Rb0SbiYtTrXU8=;
+        b=Rh81RH8nQEu49gSFCKFQ5PcsxYZMWK+qvTFiQ/D82P22rkgJz3qjuhFN0wnEyB9VcR
+         kkHUGPcaVCKtv62tOKXPVGtnGjm9pMixkYEVq/EvNNLRCUA1xi1btR1coPrNTDwXoy6Q
+         2eGP+wEuMWGaZUS3pFMssr+IEVqL/JA+i1+WxeE+monTQtCpta3v2XBlpQUASrcwbKYf
+         BMzMB5yp/wXLiKnyD4y7/MiIlAWNadG5LUk3exXCuzvKK5br42qRhuI+KK1n7kBG3wBx
+         sB0QD4xJ8FUpaiqfhbrUNfx7kl+AxAKF3/wuicDv5l7TW/+g06JRjYzEZwxWhxIE62V8
+         PKvA==;
+        darn=konstantinfosolutions.com
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=konstantinfo-com.20251104.gappssmtp.com; s=20251104; t=1787035301; x=1787640101; darn=konstantinfosolutions.com;
+        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
+         :references:mime-version:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=tBIW7zQqGZUTI6zJTV6iI+VRqjAoVg2ir0Uwn2Yoz4c=;
+        b=EAVJdNbiTwHfmdXJXJ7l8XttnX+rbSxemYU9f6kxTFHj5ZilXK/FBMaqhNqEhV6ncq
+         YzdsaRivq5xoEpetFJQQuHpxvolZ5ZUVnWfmas+u7Ljoak/oV4B0s9qKvl4uYHzxwBUa
+         2NGhaJguHrLD/58HeBY9ngNbxMVVuAqhxFL2uUU3Ky8fz18QlMQWdmXVqMrk0Pam8tFH
+         dV5E3SAuOHHELMXCOkAmMV+DNQDF51pH3nc21Q/xyr6s1pnPlEGVY9FupAcaKTZfbUn3
+         4ENzl1PMO0yGSEY+I908AQFeVKvoXwhOXZPtv/gH9Tj/qBw4lHaT3nMA0uP8AkYx2Li/
+         hSQA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1787035301; x=1787640101;
+        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
+         :references:mime-version:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to:content-type;
+        bh=tBIW7zQqGZUTI6zJTV6iI+VRqjAoVg2ir0Uwn2Yoz4c=;
+        b=Opl9SaZldeqW845PZv5pzMzYfHD6Au8Fq55vZAt5ffQSFZvZvyNfDByR6F5FSQ0Z9U
+         KNmUKpP8vpXzrZSum7of1rs41mrAoeQff2Ov47XnctoaVLHcmr7r4mJaiQV6xe9EiQzC
+         y1xMMXkxXfXCrIEaqnquQjA9HX85e1Sx2OadQjJ1LhGr97fQDYeqgbVv5KXeC9K7IUoX
+         YIxhGd/98wNReuDCPYQz9IdDNmYUZzX8qP2Y3K5FAbzMnHRILzWO5hHX9pHHKeY4CZQ6
+         rGVOJYD1EH1ft0nzpeO81P9VIkz/kPs3QQYH9UVza6BAm8CiQzOocZ4IsCCTl1NQxhEz
+         PSkw==
+X-Gm-Message-State: AOJu0YxPmSarOPanPfwZG3OWpsC7yvEyXh9+oeeKOHDxLUEG2ZgXo5iZ
+	llgEUCEIme9qT1K9wWcleC/XBs+AVPqIu/R3Y+xljVNiJInEdYgWeTkeE7rvFUAcL1BNlo3g25S
+	2wqbT9iK4j+Bq5Tvob67kKLL5bXwPV6VudtMb89yjVKWt3MNx/h0ctHMC5g==
+X-Gm-Gg: AR+sD12h7l/JtPODSpeW6aQ40lD7KPwIw+pe1M2jzTglr38/Cei53EHk1UNBv9Q+QQB
+	whHxOdDyHetb+AxT/1fUj5NtBLixx/ZgXkhJ+ZXYWM74sOq/rLR+sr10FCl7i9KJJxfa4VULC9X
+	ObQFcXLfJcidlSTim1GctEwY3YM3k2atlYkFmmiJL1FwrpHuAqtXQk9kGnsVLkXqQ9IIPxD8hZZ
+	vAJxaQQHmz6LXRQiuUGSGeIWZnnUrg916qhr1nc/LI6ZYU0Ymb+ny1nI+OZbOYye6WGpASD0taP
+	rRBcgpiF6jGm9L9/KhYbglveJfGRhsyY8mOgVWdY1YXHjLaGjazTx/wyOEflpetfYYC4RZZ+mLr
+	e
+X-Received: by 2002:a05:6870:9e8c:b0:451:ea1f:53f6 with SMTP id
+ 586e51a60fabf-45e9206befbmr26978294fac.11.1787035301328; Mon, 17 Aug 2026
+ 23:41:41 -0700 (PDT)
+MIME-Version: 1.0
+References: <3bb5ce0a-6c3c-4c40-8e9f-f6a3e037fa5c@konstantinfosolutions.com> <5f16e1ff-253d-4a06-b92d-02a03e9e18a1@konstantinfosolutions.com>
+In-Reply-To: <5f16e1ff-253d-4a06-b92d-02a03e9e18a1@konstantinfosolutions.com>
+From: HR Manager <hr@konstantinfo.com>
+Date: Tue, 18 Aug 2026 12:11:30 +0530
+X-Gm-Features: AcwNN1W123wP5E_J1hNB58aDfJbZhhQ9RN8rQ_QUgZuFzXJIr8xVmjUHgBqBTLU
+Message-ID: <CAGEu-1OA6k-UwRSMDZ+h6yRBmKvs97976n1PFBPk=r_6BZJyFQ@mail.gmail.com>
+Subject: Re: Confirmation of Employment Decision, Notice Period and Required Documentation
+To: Rahul Dubey <rahul.d@konstantinfosolutions.com>
+Cc: HR-Dept <hr@konstantinfosolutions.com>, yogendra@konstantinfo.com, 
+	dubeyrahul890@gmail.com
+Content-Type: multipart/alternative; boundary="000000000000564dc906594c9463"
+X-Spam-Status: No, score=-0.5
+X-Spam-Score: -4
+X-Spam-Bar: /
+X-Spam-Flag: NO
+
+--000000000000564dc906594c9463
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi Rahul,
+
+As discussed during our recent conversation regarding your career growth
+and current role expectations, we also discussed certain areas where
+further improvement in skill development, and capability enhancement would
+be required to support your continued growth within the organization. We
+understand that, considering these aspects, you have been evaluating
+opportunities outside the organization, along with your personal business
+plans.
+
+During the discussion, you also expressed your willingness to move on from
+the organization and requested an early relieving, considering the offers
+you currently have in hand. We appreciate the openness and transparency
+with which you shared your thoughts and future plans with us.
+
+Accordingly, rather than moving forward with discussions around your
+current role expectations and performance-related processes, we would like
+to understand your preferred timeline for transition and relieving. This
+will help us plan the necessary work handover and ensure a smooth
+transition for both you and the organization.
+
+Please let us know your expected last working date or the earliest date by
+which you would like to be relieved.
+
+We will review your requested date based on business requirements, project
+commitments, and the required handover, and we will try our best to
+facilitate the transition at the earliest possible date.
+
+We value your contribution and want to ensure a professional and respectful
+transition.
+
+For any further clarification regarding the terms and conditions of your
+employment, please refer to your appointment letter.
+
+
+
+Regards,
+Sr. HR Manager
+
+Konstant Infosolutions Pvt Ltd
+
+India: +91-141-4028078/2291398 <India:+91-141-4028078/2291398>  |
+hr@konstantinfo.com
+
+ISO 9001-2008 Certified | D&B Certified | NASSCOM Member
+
+
+On Tue, Aug 18, 2026 at 11:28=E2=80=AFAM Rahul Dubey <
+rahul.d@konstantinfosolutions.com> wrote:
+
+> Hi Ruchi,
+>
+> Following our discussion on *17th* *August*, confirming my understanding:
+> the company has decided not to continue my employment and is providing 30
+> days notice, with 18th September as my last working day,
+>
+> I understand this is a company-initiated decision. For processing purpose=
+,
+> please let me know the documentation required from my end(I understand a
+> smooth exist with the standard experience/relieving letter was discussed)=
+ ,
+> I'm happy to cooperate, though I'd note this isn't a resignation on my
+> part.
+>
+> Could you also share a copy of my last signed 90-day notice/bond agreemen=
+t
+> form my records, and confirm the 30 day notice-pay terms in writing?
+>
+> Thanks
+> Rahul Dubey
+> KIPL1696
+>
+> On 18-08-2026 11:26, Rahul Dubey wrote:
+>
+> Hi Ruchi,
+>
+> Following our discussion on *17th* *August*, confirming my understanding:
+> the company has decided not to continue my employment and is providing 30
+> days notice, with 18th September as my last working day,
+>
+> I understand this is a company-initiated decision. For processing purpose=
+,
+> please let me know the documentation required from my end(I understand a
+> smooth exist with the standard experience/relieving letter was discussed)=
+ ,
+> I'm happy to cooperate, though I'd note this isn't a resignation on my
+> part.
+>
+> Could you also share a copy of my last signed 90-day notice/bond agreemen=
+t
+> form my records, and confirm the 30 day notice-pay terms in writing?
+>
+> Thanks
+> Rahul Dubey
+> KIPL1696
+>
+>
+
+--000000000000564dc906594c9463
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div>Hi Rahul,<br><br><p>As discussed during our recent co=
+nversation regarding your career growth and current role expectations, we a=
+lso discussed certain areas where further improvement in skill development,=
+ and capability enhancement would be required to support your continued gro=
+wth within the organization. We understand that, considering these aspects,=
+ you have been evaluating opportunities outside the organization, along wit=
+h your personal business plans.<br><br>
+During the discussion, you also expressed your willingness to move on from =
+the organization and requested an early relieving, considering the offers y=
+ou currently have in hand. We appreciate the openness and transparency with=
+ which you shared your thoughts and future plans with us.</p><p>Accordingly=
+, rather than moving forward with discussions around your current role expe=
+ctations and performance-related processes, we would like to understand you=
+r preferred timeline for transition and relieving. This will help us plan t=
+he necessary work handover and ensure a smooth transition for both you and =
+the organization.</p><p>Please let us know your expected last working date =
+or the earliest date by which you would like to be relieved.=C2=A0</p><p>We=
+ will review your requested date based on business requirements, project co=
+mmitments, and the required handover, and we will try our best to facilitat=
+e the transition at the earliest possible date.</p><p>We value your contrib=
+ution and want to ensure a professional and respectful transition.</p><p>Fo=
+r any further clarification regarding the terms and conditions of your empl=
+oyment, please refer to your appointment letter.</p><p><br></p><p><br></p><=
+/div><div><div dir=3D"ltr" class=3D"gmail_signature" data-smartmail=3D"gmai=
+l_signature"><div dir=3D"ltr"><table cellpadding=3D"0" cellspacing=3D"0" st=
+yle=3D"color:rgb(0,0,0);font-family:Arial;border-collapse:collapse"><tbody>=
+<tr><td style=3D"padding:0.01px"><p style=3D"margin:0.1px;line-height:19.2p=
+x;font-size:16px"><span style=3D"text-transform:initial;font-weight:bold;co=
+lor:rgb(100,100,100);font-size:13px">Regards,<br>Sr. HR Manager</span></p><=
+p style=3D"margin:0.1px;line-height:19.2px;font-size:16px"><span style=3D"t=
+ext-transform:initial;font-weight:bold;color:rgb(100,100,100);font-size:13p=
+x">Konstant Infosolutions Pvt Ltd</span></p></td></tr><tr><td><table cellpa=
+dding=3D"0" cellspacing=3D"0" style=3D"border-collapse:collapse"><tbody><tr=
+><td nowrap width=3D"413" style=3D"padding-top:14px;width:413px"><p style=
+=3D"margin:1px;line-height:10.89px;font-size:11px;color:rgb(33,33,33)"><a h=
+ref=3D"tel:India:+91-141-4028078/2291398" rel=3D"nofollow noreferrer" style=
+=3D"color:rgb(17,85,204);text-decoration:unset" target=3D"_blank"><span sty=
+le=3D"line-height:13.2px;color:rgb(33,33,33)">India: +91-141-4028078/229139=
+8</span></a>=C2=A0=C2=A0|=C2=A0=C2=A0<a href=3D"mailto:hr@konstantinfo.com"=
+ rel=3D"nofollow noreferrer" style=3D"color:rgb(17,85,204);text-decoration:=
+unset" target=3D"_blank"><span style=3D"line-height:13.2px;color:rgb(33,33,=
+33)">hr@konstantinfo.com</span></a></p></td></tr><tr><td nowrap width=3D"46=
+1" style=3D"padding-top:7px;width:461px"><p style=3D"margin:1px;line-height=
+:10.89px;font-size:11px;color:rgb(33,33,33)"><span style=3D"line-height:1.2=
+">ISO 9001-2008 Certified | D&amp;B Certified | NASSCOM Member</span></p></=
+td></tr></tbody></table></td></tr></tbody></table></div></div></div><br></d=
+iv><br><div class=3D"gmail_quote gmail_quote_container"><div dir=3D"ltr" cl=
+ass=3D"gmail_attr">On Tue, Aug 18, 2026 at 11:28=E2=80=AFAM Rahul Dubey &lt=
+;<a href=3D"mailto:rahul.d@konstantinfosolutions.com">rahul.d@konstantinfos=
+olutions.com</a>&gt; wrote:<br></div><blockquote class=3D"gmail_quote" styl=
+e=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);paddin=
+g-left:1ex"><u></u>
+
+ =20
+   =20
+ =20
+  <div>
+    <p>Hi Ruchi,
+      <br>
+      <br>
+      Following our discussion on <b>17th</b> <b>August</b>,
+      confirming my understanding: the company has decided not to
+      continue my employment and is providing 30 days notice, with 18th
+      September as my last working day,
+      <br>
+      <br>
+      I understand this is a company-initiated decision. For processing
+      purpose, please let me know the documentation required from my
+      end(I understand a smooth exist with the standard
+      experience/relieving letter was discussed) , I&#39;m happy to
+      cooperate, though I&#39;d note this isn&#39;t a resignation on my par=
+t.
+      <br>
+      <br>
+      Could you also share a copy of my last signed 90-day notice/bond
+      agreement form my records, and confirm the 30 day notice-pay terms
+      in writing?
+      <br>
+      <br>
+      Thanks
+      <br>
+      Rahul Dubey
+      <br>
+      KIPL1696
+      <br>
+      <br>
+    </p>
+    <div>On 18-08-2026 11:26, Rahul Dubey wrote:<br>
+    </div>
+    <blockquote type=3D"cite">Hi
+      Ruchi,
+      <br>
+      <br>
+      Following our discussion on=C2=A0<b>17th</b> <b>August</b>, confirmin=
+g
+      my understanding: the company has decided not to continue my
+      employment and is providing 30 days notice, with 18th September as
+      my last working day,
+      <br>
+      <br>
+      I understand this is a company-initiated decision. For processing
+      purpose, please let me know the documentation required from my
+      end(I understand a smooth exist with the standard
+      experience/relieving letter was discussed) , I&#39;m happy to
+      cooperate, though I&#39;d note this isn&#39;t a resignation on my par=
+t.
+      <br>
+      <br>
+      Could you also share a copy of my last signed 90-day notice/bond
+      agreement form my records, and confirm the 30 day notice-pay terms
+      in writing?
+      <br>
+      <br>
+      Thanks
+      <br>
+      Rahul Dubey
+      <br>
+      KIPL1696
+      <br>
+      <br>
+    </blockquote>
+  </div>
+
+</blockquote></div>
+
+--000000000000564dc906594c9463--
