@@ -63,7 +63,7 @@
     { "icon": "⚡",  "title": "REST API Development",       "desc": "Scalable, documented REST APIs with Node.js, NestJS, or ExpressJS — from auth to complex business logic.", "tags": ["Node.js","NestJS","ExpressJS","TypeScript"] },
     { "icon": "🛒",  "title": "E-Commerce & Payments",      "desc": "Full e-commerce backends with Stripe, UPI, subscriptions, wallets, and webhooks. B2C and B2B ready.",        "tags": ["Stripe","UPI","MongoDB","Subscriptions"]   },
     { "icon": "☁️", "title": "SaaS & Multi-Tenant Apps",   "desc": "Multi-tenant SaaS platforms with role-based access, billing, and architecture built to scale.",               "tags": ["NestJS","TypeORM","PostgreSQL","Redis"]    },
-    { "icon": "🤖",  "title": "AI / LLM Integration",       "desc": "Integrate Gemini or OpenAI, build RAG pipelines with LangChain and vector databases into your product.",      "tags": ["Gemini API","LangChain","Pinecone","RAG"]  },
+    { "icon": "🤖",  "title": "AI Integration",       "desc": "Integrate Gemini or OpenAI, build RAG pipelines with LangChain and vector databases into your product.",      "tags": ["Gemini API","LangChain","Pinecone","RAG"]  },
     { "icon": "🗄️", "title": "Database Architecture",      "desc": "Schema design, indexing, and query optimisation across MongoDB, MySQL, and PostgreSQL.",                       "tags": ["MongoDB","MySQL","PostgreSQL","Redis"]     },
     { "icon": "🚀",  "title": "Deployment & DevOps",        "desc": "Linux server setup, Nginx reverse proxy, SSL, PM2 process management, and Git-based CI.",                    "tags": ["Linux","Nginx","PM2","Git"]                }
   ],
