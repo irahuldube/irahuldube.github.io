@@ -19,7 +19,7 @@
       "$ whoami",
       "rahul_dubey — backend_developer",
       "$ cat status.txt",
-      "5+ yrs building REST APIs @ scale | Node.js · NestJS · ExpressJS",
+      "4.8+ yrs building REST APIs @ scale | Node.js · NestJS · ExpressJS",
       "$ ./run --mode=production"
     ]
   },
