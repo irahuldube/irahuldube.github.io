@@ -132,7 +132,7 @@
       "url": "https://www.maison-regalia.com",
       "playstore": "",
       "appstore": "",
-      "image": "",
+      "image": "https://images.unsplash.com/photo-1557821552-17105176677c?w=500&h=300&fit=crop",
       "ext": "api",
       "stack": ["Node.js", "ExpressJS", "MongoDB", "Ajax", "Axios", "UPI"],
       "points": [
@@ -148,7 +148,7 @@
       "url": "https://yogous.com",
       "playstore": "",
       "appstore": "",
-      "image": "",
+      "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=500&h=300&fit=crop",
       "ext": "api",
       "stack": ["Node.js", "ExpressJS", "MongoDB", "Stripe"],
       "points": [
@@ -164,7 +164,7 @@
       "url": "https://www.attain-pt.com",
       "playstore": "",
       "appstore": "",
-      "image": "",
+      "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&h=300&fit=crop",
       "ext": "api",
       "stack": ["Node.js", "ExpressJS", "MongoDB"],
       "points": [
@@ -179,7 +179,7 @@
       "url": "",
       "playstore": "",
       "appstore": "",
-      "image": "",
+      "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop",
       "ext": "saas",
       "stack": ["Node.js", "NestJS", "MongoDB", "TypeORM"],
       "points": [
@@ -194,7 +194,7 @@
       "url": "https://www.matchcreatorz.com",
       "playstore": "",
       "appstore": "",
-      "image": "",
+      "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop",
       "ext": "api",
       "stack": ["Node.js", "ExpressJS", "MongoDB"],
       "points": [
@@ -209,7 +209,7 @@
       "url": "https://aiusecase.galaxyaiagent.com",
       "playstore": "",
       "appstore": "",
-      "image": "",
+      "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=500&h=300&fit=crop",
       "ext": "iot",
       "stack": ["Node.js", "ExpressJS", "SQL", "SQLite"],
       "points": [
@@ -225,7 +225,7 @@
       "url": "",
       "playstore": "",
       "appstore": "",
-      "image": "",
+      "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=500&h=300&fit=crop",
       "ext": "ai",
       "stack": ["Node.js", "ExpressJS", "React.js", "Gemini API", "MongoDB"],
       "points": [
@@ -241,7 +241,7 @@
       "url": "",
       "playstore": "",
       "appstore": "",
-      "image": "",
+      "image": "https://images.unsplash.com/photo-1633356122544-f134324ef6db?w=500&h=300&fit=crop",
       "ext": "ai",
       "stack": ["Node.js", "LangChain", "Pinecone", "Gemini API"],
       "points": [
