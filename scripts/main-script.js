@@ -20,6 +20,25 @@ function initThemeToggle() {
   });
 }
 
+/* =========================================================
+   TABBAR SCROLL EFFECT
+========================================================= */
+function initTabbarScroll() {
+  const tabbar = document.querySelector('.tabbar');
+  if (!tabbar) return;
+
+  function updateTabbarStyle() {
+    if (window.scrollY > 0) {
+      tabbar.classList.add('scrolled');
+    } else {
+      tabbar.classList.remove('scrolled');
+    }
+  }
+
+  window.addEventListener('scroll', updateTabbarStyle, { passive: true });
+  updateTabbarStyle();
+}
+
 const SKILL_LABELS = {
   languages: "languages",
   backend: "backend",
@@ -408,6 +427,7 @@ function escapeHtml(str) {
 document.addEventListener('DOMContentLoaded', () => {
   loadData();
   initThemeToggle();
+  initTabbarScroll();
 
   // cert modal close
   const certModal = document.getElementById('certModal');
