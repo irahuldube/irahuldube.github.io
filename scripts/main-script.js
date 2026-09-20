@@ -4,6 +4,22 @@
    update the site, no HTML changes required.
 ========================================================= */
 
+/* =========================================================
+   THEME TOGGLE
+========================================================= */
+function initThemeToggle() {
+  const themeToggle = document.getElementById('themeToggle');
+  if (!themeToggle) return;
+  
+  themeToggle.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+  });
+}
+
 const SKILL_LABELS = {
   languages: "languages",
   backend: "backend",
@@ -391,6 +407,7 @@ function escapeHtml(str) {
 ========================================================= */
 document.addEventListener('DOMContentLoaded', () => {
   loadData();
+  initThemeToggle();
 
   // cert modal close
   const certModal = document.getElementById('certModal');
